@@ -1934,6 +1934,1408 @@
     }
 
 
+
+
+
+
+
+
+
+
+
+    /* ===== FAQ SECTION STYLES ===== */
+        .faq-section {
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--secondary) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .faq-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Image Container */
+        .faq-image-container {
+            position: relative;
+            height: 100%;
+        }
+
+        .image-stack {
+            position: relative;
+            height: 600px;
+        }
+
+        .main-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 70%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            z-index: 2;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .main-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .overlay-image {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60%;
+            height: 50%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            z-index: 3;
+            border: 5px solid var(--white);
+        }
+
+        .overlay-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .overlay-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 51, 102, 0.9);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 4;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .image-badge i {
+            color: var(--accent);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            box-shadow: var(--shadow);
+            z-index: 1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .element-1 {
+            top: 10%;
+            right: 5%;
+            animation-delay: 0s;
+        }
+
+        .element-2 {
+            bottom: 30%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        .element-3 {
+            top: 40%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* FAQ Content */
+        .faq-content-container {
+            max-width: 700px;
+        }
+
+        .faq-header {
+            margin-bottom: 40px;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .section-subtitle::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            line-height: 1.3;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+
+        .section-description {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-top: 25px;
+        }
+
+        /* FAQ Accordion */
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .faq-item.active {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 25px 30px;
+            background: transparent;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(0, 102, 204, 0.02);
+        }
+
+        .faq-question[aria-expanded="true"] {
+            background-color: rgba(0, 102, 204, 0.05);
+        }
+
+        .question-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+            text-align: left;
+        }
+
+        .question-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .faq-question[aria-expanded="true"] .question-icon {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .toggle-icon {
+            color: var(--gray);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            min-width: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-question[aria-expanded="true"] .toggle-icon {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+        }
+
+        .faq-answer[aria-hidden="false"] {
+            max-height: 1000px;
+            transition: max-height 1s ease-in-out;
+        }
+
+        .faq-answer-content {
+            padding: 0 30px 30px 110px;
+        }
+
+        .faq-answer p {
+            color: var(--dark);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .faq-answer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+
+        .faq-answer li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .faq-answer li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .faq-answer strong {
+            color: var(--primary);
+        }
+
+        /* FAQ CTA */
+        .faq-cta {
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.05), rgba(0, 102, 204, 0.05));
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 102, 204, 0.1);
+        }
+
+        .faq-cta p {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #E55A00;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .faq-wrapper {
+                gap: 60px;
+            }
+            
+            .image-stack {
+                height: 550px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .faq-wrapper {
+                gap: 50px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .image-stack {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .faq-wrapper {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .faq-image-container {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .image-stack {
+                height: 400px;
+            }
+            
+            .main-image {
+                width: 70%;
+                height: 60%;
+            }
+            
+            .overlay-image {
+                width: 50%;
+                height: 40%;
+            }
+            
+            .faq-answer-content {
+                padding: 0 30px 30px 90px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.9rem;
+            }
+            
+            .faq-question {
+                padding: 20px 25px;
+            }
+            
+            .question-text {
+                font-size: 1rem;
+            }
+            
+            .faq-answer-content {
+                padding: 0 25px 25px 75px;
+            }
+            
+            .floating-element {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .image-badge {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .faq-question {
+                padding: 18px 20px;
+            }
+            
+            .question-content {
+                gap: 15px;
+            }
+            
+            .question-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .faq-answer-content {
+                padding: 0 20px 20px 20px;
+            }
+            
+            .faq-answer p {
+                font-size: 1rem;
+            }
+            
+            .faq-answer li {
+                font-size: 0.95rem;
+                padding-left: 20px;
+            }
+            
+            .faq-answer li::before {
+                left: 0;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .floating-element {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            .image-stack {
+                height: 350px;
+            }
+            
+            .main-image {
+                width: 90%;
+                height: 50%;
+                left: 5%;
+            }
+            
+            .overlay-image {
+                width: 80%;
+                height: 40%;
+                right: 5%;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .question-text {
+                font-size: 0.95rem;
+            }
+            
+            .faq-answer-content {
+                padding: 0 15px 15px 15px;
+            }
+            
+            .question-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+
+
+    /* ===========================
+       TESTIMONIALS SECTION
+    ============================ */
+
+    .testimonials {
+      background: var(--light);
+      padding: 5rem 0;
+      width: 100%;
+      overflow: hidden; /* Prevent section overflow */
+    }
+
+    .testimonials-grid {
+      display: grid;
+      gap: 3rem;
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr 1.5fr;
+        align-items: start;
+      }
+    }
+
+    /* LEFT PANEL */
+
+    .testimonials-info {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .testimonials-info .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+
+    .testimonials-info h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--primary);
+      margin: .6rem 0 1rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .testimonials-info p {
+      color: var(--gray);
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+      width: 100%;
+    }
+
+    .stat-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.6rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-card i {
+      color: var(--accent);
+      font-size: 1.6rem;
+      margin-bottom: .5rem;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .stat-card span {
+      font-size: .85rem;
+      color: var(--gray);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 1rem;
+      padding: .9rem 1.8rem;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      font-family: 'Montserrat', sans-serif;
+      background: transparent;
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    
+
+    .testimonials-slider {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .slider-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform .5s ease;
+      width: max-content;
+      padding: 10px 5px; 
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      
+      padding: 2rem;
+      min-width: 32%;
+      transition: var(--transition);
+      flex: 0 0 auto;
+      width: calc(80% - 20px); 
+      min-width: 0; 
+    }
+
+    @media (min-width: 768px) {
+      .testimonial-card {
+        width: calc(50% - 10px); 
+        flex: 0 0 calc(50% - 10px);
+      }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 767px) {
+      .testimonial-card {
+        width: calc(100vw - 60px); 
+        margin: 0 10px;
+      }
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-card header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card header i {
+      color: var(--accent);
+      font-size: 1.6rem;
+    }
+
+    .stars {
+      color: #ffc107;
+      font-size: 1rem;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      margin: 1rem 0 1.5rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    #foot {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    #foot img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    #foot strong {
+      display: block;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    #foot span {
+      font-size: .85rem;
+      color: var(--gray);
+      word-break: break-word;
+    }
+
+    /* CONTROLS */
+
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .slider-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+      background: var(--white);
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: var(--primary);
+      transition: .3s;
+      flex-shrink: 0;
+    }
+
+    .slider-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: scale(1.1);
+    }
+
+    /* Responsive fixes */
+    @media (max-width: 1023px) {
+      .testimonials-grid {
+        gap: 2rem;
+      }
+      
+      .testimonials {
+        padding: 3rem 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .container {
+        padding: 0 15px;
+      }
+      
+      .testimonials {
+        padding: 2rem 0;
+      }
+      
+      .slider-track {
+        gap: 1rem;
+      }
+      
+      .testimonial-card {
+        padding: 1.5rem;
+      }
+      
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #foot {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      #foot img {
+        margin: 0 auto;
+      }
+      
+      .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+
+
+
+
+
+        
+
+
+
+/* ===== PROJECTS GALLERY SECTION ===== */
+        .projects-section1 {
+            padding: 80px 0;
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects-section1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--secondary) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .projects-section1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .projects-section1 h3 {
+            font-size: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .projects-section1 h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 40px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .projects-section1 h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+
+        /* Tabs Styling */
+        .project-tabss {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-tabss a {
+            padding: 10px 25px;
+            background: var(--white);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+            white-space: nowrap;
+        }
+
+        .project-tabss a:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-tabss a.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-cards {
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            aspect-ratio: 4/3;
+            background: var(--white);
+            cursor: pointer;
+        }
+
+        .project-cards:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-cards img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .project-cards:hover img {
+            transform: scale(1.05);
+        }
+
+        .overlayy {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 51, 102, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-cards:hover .overlayy {
+            opacity: 1;
+        }
+
+        .overlayy i {
+            color: var(--white);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .project-cards:hover .overlayy i {
+            transform: scale(1.2);
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: var(--white);
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .modal .close:hover {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--white);
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal .arrow:hover {
+            background: var(--accent);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .modal .arrow.prev {
+            left: 30px;
+        }
+
+        .modal .arrow.next {
+            right: 30px;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        
+        /* Large Desktop */
+        @media (max-width: 1400px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* Desktop */
+        @media (max-width: 1200px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (max-width: 1024px) {
+            .projects-section1 {
+                padding: 60px 0;
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .project-tabss {
+                gap: 10px;
+            }
+            
+            .project-tabss a {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Tablet Portrait */
+        @media (max-width: 768px) {
+            .projects-section1 {
+                padding: 50px 0;
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .projects-section1 h2 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+            
+            .project-tabss {
+                gap: 8px;
+                margin-bottom: 30px;
+            }
+            
+            .project-tabss a {
+                padding: 6px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .modal .arrow {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+                padding: 15px;
+            }
+            
+            .modal .arrow.prev {
+                left: 15px;
+            }
+            
+            .modal .arrow.next {
+                right: 15px;
+            }
+            
+            .modal .close {
+                top: 20px;
+                right: 20px;
+                font-size: 2rem;
+            }
+        }
+
+        /* Mobile Landscape */
+        @media (max-width: 576px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .projects-section1 h2 {
+                font-size: 1.6rem;
+            }
+            
+            .projects-section1 h3 {
+                font-size: 0.9rem;
+            }
+            
+            .project-cards {
+                border-radius: 10px;
+            }
+            
+            .overlayy i {
+                font-size: 1.5rem;
+            }
+            
+            .project-tabss {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+                margin: 0 -20px 30px;
+                padding: 0 20px;
+            }
+            
+            .project-tabss::-webkit-scrollbar {
+                height: 4px;
+            }
+            
+            .project-tabss::-webkit-scrollbar-thumb {
+                background: var(--accent);
+                border-radius: 2px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Mobile Portrait */
+        @media (max-width: 480px) {
+            .projects-section1 {
+                padding: 40px 0;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .projects-section1 h2 {
+                font-size: 1.4rem;
+            }
+            
+            .modal img {
+                max-width: 95%;
+                max-height: 70vh;
+            }
+            
+            .modal .arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+                padding: 10px;
+            }
+            
+            .modal .arrow.prev {
+                left: 10px;
+            }
+            
+            .modal .arrow.next {
+                right: 10px;
+            }
+            
+            .modal .close {
+                top: 15px;
+                right: 15px;
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 360px) {
+            .projects-section1 {
+                padding: 30px 0;
+            }
+            
+            .projects-section1 h2 {
+                font-size: 1.3rem;
+            }
+            
+            .projects-section1 h3 {
+                font-size: 0.8rem;
+            }
+            
+            .project-tabss a {
+                padding: 5px 12px;
+                font-size: 0.75rem;
+            }
+            
+            .project-cards {
+                aspect-ratio: 1/1;
+            }
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .project-cards:hover {
+                transform: none;
+            }
+            
+            .project-cards:hover img {
+                transform: none;
+            }
+            
+            .overlayy {
+                opacity: 0.7;
+            }
+            
+            .modal .arrow,
+            .modal .close {
+                min-width: 44px;
+                min-height: 44px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .projects-section1 {
+                background: none !important;
+            }
+            
+            .projects-section1::before,
+            .projects-section1::after {
+                display: none;
+            }
+            
+            .overlayy {
+                display: none;
+            }
+            
+            .project-tabss {
+                display: none;
+            }
+            
+            .projects-grid {
+                break-inside: avoid;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
     </style>
 </head>
 <body>
@@ -2507,10 +3909,562 @@
 </section>
 
 
+
+
+
+
+
+
+
+
+
+
+<!-- FAQ Section -->
+<section class="faq-section section-padding" id="faq">
+        <div class="container">
+            <div class="faq-wrapper">
+                <!-- Left Side: Images -->
+                <div class="faq-image-container" data-aos="fade-right" data-aos-duration="800">
+                    <div class="image-stack">
+                        <div class="main-image">
+                            <img src="Images/cables-red-light-background.jpg" 
+                                 alt="Professional Network Installation">
+                            <div class="image-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure Networks</span>
+                            </div>
+                        </div>
+                        <div class="overlay-image" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                            <img src="Images/GPS-TRACKER.jpg" 
+                                 alt="GPS Tracking Solutions">
+                            <div class="image-badge">
+                                <i class="fas fa-satellite"></i>
+                                <span>GPS Tracking</span>
+                            </div>
+                        </div>
+                        <div class="floating-element element-1">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div class="floating-element element-2">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="floating-element element-3">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: FAQ Content -->
+                <div class="faq-content-container" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <div class="faq-header">
+                        <span class="section-subtitle">FAQ'S</span>
+                        <h2 class="section-title">Frequently Asked Questions</h2>
+                        <p class="section-description">
+                            Find answers to common questions asked by our valued customers about security, electrical, and IT solutions.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Accordion -->
+                    <div class="faq-accordion">
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                                <div class="question-content">
+                                    <span class="question-icon">
+                                        <i class="fas fa-shield-check"></i>
+                                    </span>
+                                    <span class="question-text">
+                                        Are your security systems compliant with data protection regulations?
+                                    </span>
+                                </div>
+                                <span class="toggle-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <div class="faq-answer" id="faq-answer-1" aria-hidden="true">
+                                <div class="faq-answer-content">
+                                    <p>Yes, all our security solutions are designed with privacy-by-design principles and comply with relevant data protection laws. We implement:</p>
+                                    <ul>
+                                        <li>Secure encrypted data storage</li>
+                                        <li>Role-based access controls</li>
+                                        <li>Regular security audits</li>
+                                        <li>GDPR compliant solutions</li>
+                                        <li>End-to-end encryption</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="350">
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                                <div class="question-content">
+                                    <span class="question-icon">
+                                        <i class="fas fa-leaf"></i>
+                                    </span>
+                                    <span class="question-text">
+                                        Do you provide energy efficiency assessments with your electrical installations?
+                                    </span>
+                                </div>
+                                <span class="toggle-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <div class="faq-answer" id="faq-answer-2" aria-hidden="true">
+                                <div class="faq-answer-content">
+                                    <p>We include comprehensive energy audits in all our electrical projects. Our assessments focus on:</p>
+                                    <ul>
+                                        <li>LED lighting retrofits (up to 80% energy savings)</li>
+                                        <li>Smart controls and automation systems</li>
+                                        <li>Energy-efficient equipment recommendations</li>
+                                        <li>Power consumption monitoring</li>
+                                        <li>Potential savings analysis (typically 30-40% reduction)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                                <div class="question-content">
+                                    <span class="question-icon">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                    <span class="question-text">
+                                        How do you ensure cybersecurity in your network installations?
+                                    </span>
+                                </div>
+                                <span class="toggle-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <div class="faq-answer" id="faq-answer-3" aria-hidden="true">
+                                <div class="faq-answer-content">
+                                    <p>Our cybersecurity approach includes multiple layers of protection:</p>
+                                    <ul>
+                                        <li>Enterprise-grade firewalls and intrusion detection</li>
+                                        <li>End-to-end encrypted connections (VPN, SSL)</li>
+                                        <li>Regular security patches and updates</li>
+                                        <li>Comprehensive employee training programs</li>
+                                        <li>24/7 network monitoring and threat detection</li>
+                                        <li>Multi-factor authentication implementation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450">
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                                <div class="question-content">
+                                    <span class="question-icon">
+                                        <i class="fas fa-video"></i>
+                                    </span>
+                                    <span class="question-text">
+                                        What types of security systems do you install?
+                                    </span>
+                                </div>
+                                <span class="toggle-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <div class="faq-answer" id="faq-answer-4" aria-hidden="true">
+                                <div class="faq-answer-content">
+                                    <p>We provide comprehensive security solutions including:</p>
+                                    <ul>
+                                        <li>CCTV surveillance systems (HD/4K, IP, thermal)</li>
+                                        <li>Intrusion and fire alarm systems</li>
+                                        <li>Biometric and card-based access control</li>
+                                        <li>Perimeter security (electric fences, gates)</li>
+                                        <li>Motion and glass break detectors</li>
+                                        <li>Smart home security integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                                <div class="question-content">
+                                    <span class="question-icon">
+                                        <i class="fas fa-building"></i>
+                                    </span>
+                                    <span class="question-text">
+                                        Do you offer both residential and commercial electrical services?
+                                    </span>
+                                </div>
+                                <span class="toggle-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <div class="faq-answer" id="faq-answer-5" aria-hidden="true">
+                                <div class="faq-answer-content">
+                                    <p>Yes, we provide complete electrical services for all property types:</p>
+                                    <ul>
+                                        <li><strong>Residential:</strong> Home wiring, lighting, smart home integration</li>
+                                        <li><strong>Commercial:</strong> Office wiring, lighting systems, data cabling</li>
+                                        <li><strong>Industrial:</strong> Factory installations, machinery wiring</li>
+                                        <li><strong>Institutional:</strong> Schools, hospitals, government facilities</li>
+                                        <li><strong>Specialized:</strong> Solar installations, backup power systems</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 6 -->
+                        <div class="faq-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="550">
+                            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                                <div class="question-content">
+                                    <span class="question-icon">
+                                        <i class="fas fa-headset"></i>
+                                    </span>
+                                    <span class="question-text">
+                                        What IT support services do you provide?
+                                    </span>
+                                </div>
+                                <span class="toggle-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <div class="faq-answer" id="faq-answer-6" aria-hidden="true">
+                                <div class="faq-answer-content">
+                                    <p>Our comprehensive IT support services include:</p>
+                                    <ul>
+                                        <li>Network setup, configuration, and optimization</li>
+                                        <li>Server installation, management, and maintenance</li>
+                                        <li>Cybersecurity solutions and threat management</li>
+                                        <li>Cloud services migration and management</li>
+                                        <li>24/7 technical support and helpdesk services</li>
+                                        <li>Data backup and disaster recovery planning</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact CTA -->
+                    <div class="faq-cta" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                        <p>Still have questions? We're here to help!</p>
+                        <div class="cta-buttons">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i>
+                                Contact Us
+                            </a>
+                            <a href="tel:+256760271098" class="btn btn-outline">
+                                <i class="fas fa-phone-alt"></i>
+                                Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section
+
+    
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    <!---Testimonies-->
+ <section class="testimonials section-padding" id="testimonials">
+  <div class="container testimonials-grid">
+
+    <!-- LEFT -->
+    <div class="testimonials-info">
+      <span class="eyebrow" data-aos="fade-up" data-aos-delay="200">Testimonials</span>
+      <h2 data-aos="fade-up" data-aos-delay="300">What Our Clients Say About Fermi</h2>
+      <p data-aos="fade-up" data-aos-delay="400">
+        Businesses and homeowners trust Fermi for professional electrical,
+        security, and IT solutions across Uganda.
+      </p>
+
+      <div class="stats">
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="500">
+          <i class="fas fa-star"></i>
+          <strong>4.7/5</strong>
+          <span>Customer Rating</span>
+        </div>
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="600">
+          <i class="fas fa-users"></i>
+          <strong>500+</strong>
+          <span>Satisfied Clients</span>
+        </div>
+      </div>
+
+      <a href="#testimonials" class="btn-outline" data-aos="fade-up" data-aos-delay="700">
+        <i class="fas fa-comments"></i>
+        View All Testimonials
+      </a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="testimonials-slider" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
+      <div class="slider-container">
+        <div class="slider-track" id="sliderTrack">
+
+          <!-- CARD 1 -->
+          <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600">
+            <header>
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+            </header>
+            <p>
+              Fermi networked our office perfectly. Professional,
+              fast, and reliable service.
+            </p>
+            <div id="foot">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="">
+              <div>
+                <strong>Rafael Otim</strong>
+                <span>Kampala, Uganda</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+            <header>
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+            </header>
+            <p>
+              Excellent electrical work. The team was efficient and
+              very professional.
+            </p>
+            <div id="foot">
+              <img src="https://images.unsplash.com/photo-1494790108755-2616b786d4d9?w=100" alt="">
+              <div>
+                <strong>Sophia Martha</strong>
+                <span>Entebbe, Uganda</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+            <header>
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+            </header>
+            <p>
+              CCTV installation was flawless. Our security has
+              improved significantly.
+            </p>
+            <div id="foot">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="">
+              <div>
+                <strong>John Rogers</strong>
+                <span>Jinja, Uganda</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="slider-controls" data-aos="fade-up" data-aos-delay="400">
+        <button class="slider-btn" id="prevBtn">&#10094;</button>
+        <button class="slider-btn" id="nextBtn">&#10095;</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Projects Gallery Section -->
+    <section class="projects-section1" id="projects">
+        <div class="container">
+            <h3 data-aos="fade-up" data-aos-delay="100">@fermiSecuritySolutions</h3>
+            <h2 data-aos="fade-up" data-aos-delay="200">Our Projects Gallery</h2>
+
+            <!-- Tabs -->
+            <div class="project-tabss" data-aos="fade-up" data-aos-delay="300">
+                <a class="active" data-filter="all">All</a>
+                <a data-filter="residences">Residences</a>
+                <a data-filter="industrial">Industrial</a>
+                <a data-filter="offices">Offices</a>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Residences -->
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="400" data-category="residences">
+                    <img src="Images/ourdoorlights.jpeg" alt="Modern Residence">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="450" data-category="residences">
+                    <img src="Images/electricFence.png" alt="Secure Fence">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="500" data-category="residences">
+                    <img src="Images/newcctv.jpeg" alt="CCTV Installation">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="550" data-category="residences">
+                    <img src="Images/Facialrecognitionaccesscontrol.png" alt="Security System">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="600" data-category="residences">
+                    <img src="Images/electricFence3.jpeg" alt="Electric Fence">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="650" data-category="residences">
+                    <img src="Images/NEWfirealarm.jpeg" alt="Fire Safety">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="700" data-category="residences">
+                    <img src="Images/Fingerprintaccesscontrol.png" alt="Security Monitoring">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="750" data-category="residences">
+                    <img src="Images/solar.jpg" alt="Solar Panel Installation">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+
+                <!-- Industrial -->
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="800" data-category="industrial">
+                    <img src="Images/WaterHeater.jpg" alt="Industrial Water Heater">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="850" data-category="industrial">
+                    <img src="Images/idustrialesc.png" alt="Industrial Escalator">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="900" data-category="industrial">
+                    <img src="Images/fire-alarm.jpg" alt="Fire Alarm System">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="950" data-category="industrial">
+                    <img src="Images/switch.png" alt="Network Infrastructure">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1000" data-category="industrial">
+                    <img src="Images/setup.png" alt="Network Setup">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1050" data-category="industrial">
+                    <img src="Images/cat2cables.jpeg" alt="Cable Management">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1100" data-category="industrial">
+                    <img src="Images/GPS-TRACKER.jpg" alt="GPS Tracking System">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1150" data-category="residences">
+                    <img src="Images/maintenance2.jpeg" alt="Solar Panel Maintenance">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+
+                <!-- Offices -->
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1200" data-category="offices">
+                    <img src="Images/netRag.png" alt="Office Network Setup">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1250" data-category="offices">
+                    <img src="Images/officelights.jpeg" alt="Office Lighting">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1300" data-category="offices">
+                    <img src="Images/InstallationSmartDoor.png" alt="Office Escalator">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1350" data-category="offices">
+                    <img src="Images/acc3.jpeg" alt="Office Air Conditioning">
+                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal">
+        <span class="close">&times;</span>
+        <i class="fas fa-chevron-left arrow prev"></i>
+        <img src="" alt="Expanded Image">
+        <i class="fas fa-chevron-right arrow next"></i>
+    </div>
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box" data-aos="fade-up" data-aos-delay="100">
+                <h3>About Us</h3>
+                <p>We provide top-notch Security, Electrical & IT solutions with years of experience delivering reliable and innovative services across Uganda.</p>
+            </div>
+            <div class="footer-box" data-aos="fade-up" data-aos-delay="200">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-box" data-aos="fade-up" data-aos-delay="300">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="services.html">WLAN/LAN Installation</a></li>
+                    <li><a href="services.html">Air Conditioning</a></li>
+                    <li><a href="services.html">Automatic Gates & Electric Fences</a></li>
+                    <li><a href="services.html">Fire Alarms & Motion Detectors</a></li>
+                    <li><a href="services.html">Access Control Systems</a></li>
+                    <li><a href="services.html">POS & Tracking Solutions</a></li>
+                </ul>
+            </div>
+            <div class="footer-box contact-info" data-aos="fade-up" data-aos-delay="400">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+256 760 271 098">256 760 271 098</a></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+256 754 130 885">256 754 130 885</a></p>
+                <p><i class="fa-solid fa-envelope"></i> fermielectrictechtech@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Kampala, Uganda</p>
+            </div>
+        </div>
+        <div class="footer-bottom" data-aos="fade-up" data-aos-delay="500">
+            &copy; 2025 Fermi Electrical & IT Solutions. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Back-to-Top Button -->
+    <button id="backToTop" title="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+
+
     <script src="fermi.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+ AOS.init({
             duration:800,
             disable:false,
             once:true,
@@ -2519,12 +4473,7 @@
             disableMUtationObserver:false,
         });
 
-
-
-
-//CALL TO ACTION SECTION
-
-
+        //CALL TO ACTION SECTION
 // Initialize animations on load
     document.addEventListener('DOMContentLoaded', function() {
         //ripple effect to buttons on click
@@ -2592,6 +4541,73 @@
         }
     });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // FAQ Accordion Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    const answer = this.nextElementSibling;
+                    
+                    // Close all other FAQ items
+                    faqQuestions.forEach(q => {
+                        if (q !== this) {
+                            q.setAttribute('aria-expanded', 'false');
+                            q.parentElement.classList.remove('active');
+                            const otherAnswer = q.nextElementSibling;
+                            if (otherAnswer) {
+                                otherAnswer.setAttribute('aria-hidden', 'true');
+                                otherAnswer.style.maxHeight = '0';
+                            }
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (!isExpanded) {
+                        this.setAttribute('aria-expanded', 'true');
+                        this.parentElement.classList.add('active');
+                        answer.setAttribute('aria-hidden', 'false');
+                        
+                        // Calculate and set max-height
+                        const contentHeight = answer.scrollHeight;
+                        answer.style.maxHeight = contentHeight + 'px';
+                    } else {
+                        this.setAttribute('aria-expanded', 'false');
+                        this.parentElement.classList.remove('active');
+                        answer.setAttribute('aria-hidden', 'true');
+                        answer.style.maxHeight = '0';
+                    }
+                });
+            });
+            
+            // Auto-open first FAQ item after a short delay
+            setTimeout(() => {
+                if (faqQuestions.length > 0) {
+                    faqQuestions[0].click();
+                }
+            }, 800);
+        });
 
 
 
@@ -2777,6 +4793,251 @@
             tabContents[0].classList.add('active');
         }
     });
+
+
+
+
+
+
+
+//testimonials
+
+    const track = document.getElementById("sliderTrack");
+  const cards = document.querySelectorAll(".testimonial-card");
+  const prev = document.getElementById("prevBtn");
+  const next = document.getElementById("nextBtn");
+    
+  let slidesPerViewValue = 3;
+
+  let index = 0;
+  slidesPerViewValue = window.innerWidth < 768 ? 1 : 2;
+
+  function updateSlidesPerView() {
+    slidesPerViewValue = window.innerWidth < 768 ? 1 : 2;
+  }
+
+  function updateSlider() {
+    if (cards.length === 0) return;
+    
+    const cardWidth = cards[0].offsetWidth + (window.innerWidth < 768 ? 16 : 24);
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  function nextSlide() {
+    const maxIndex = Math.max(0, cards.length - slidesPerViewValue);
+    if (index < maxIndex) {
+      index += 1;
+    } else {
+      index = 0;
+    }
+    updateSlider();
+  }
+
+  function prevSlide() {
+    const maxIndex = Math.max(0, cards.length - slidesPerViewValue);
+    if (index > 0) {
+      index -= 1;
+    } else {
+      index = maxIndex;
+    }
+    updateSlider();
+  }
+
+  next.addEventListener("click", nextSlide);
+  prev.addEventListener("click", prevSlide);
+
+  // Handle resize
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      updateSlidesPerView();
+      updateSlider();
+      AOS.refresh(); // Refresh AOS on resize
+    }, 250);
+  });
+
+  // Initialize slider on load
+  window.addEventListener('load', () => {
+    updateSlidesPerView();
+    updateSlider();
+  });
+
+  // Also update on DOM content loaded
+  document.addEventListener('DOMContentLoaded', updateSlider);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //gallery section
+   // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.project-tabss a');
+            const projects = document.querySelectorAll('.project-cards');
+            const modal = document.querySelector('.modal');
+            const modalImg = modal.querySelector('img');
+            const closeBtn = modal.querySelector('.close');
+            const prevBtn = modal.querySelector('.arrow.prev');
+            const nextBtn = modal.querySelector('.arrow.next');
+            
+            let currentIndex = 0;
+            let filteredProjects = [];
+            let currentFilter = 'all';
+
+            // Filter projects
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    currentFilter = this.getAttribute('data-filter');
+                    
+                    // Filter projects
+                    projects.forEach(project => {
+                        const category = project.getAttribute('data-category');
+                        
+                        if (currentFilter === 'all' || category === currentFilter) {
+                            project.style.display = 'block';
+                            setTimeout(() => {
+                                project.style.opacity = '1';
+                                project.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            project.style.opacity = '0';
+                            project.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                project.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Modal functionality
+            projects.forEach((project, index) => {
+                project.addEventListener('click', function() {
+                    const imgSrc = this.querySelector('img').src;
+                    modalImg.src = imgSrc;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Get current filtered projects
+                    filteredProjects = Array.from(projects).filter(proj => {
+                        if (currentFilter === 'all') return true;
+                        return proj.getAttribute('data-category') === currentFilter && 
+                               getComputedStyle(proj).display !== 'none';
+                    });
+                    
+                    currentIndex = filteredProjects.indexOf(this);
+                });
+            });
+
+            // Close modal
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal on background click
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Navigation
+            function showImage(index) {
+                if (filteredProjects.length === 0) return;
+                
+                if (index < 0) index = filteredProjects.length - 1;
+                if (index >= filteredProjects.length) index = 0;
+                
+                currentIndex = index;
+                const imgSrc = filteredProjects[currentIndex].querySelector('img').src;
+                modalImg.src = imgSrc;
+                
+                // Add animation
+                modalImg.style.opacity = '0';
+                setTimeout(() => {
+                    modalImg.style.opacity = '1';
+                }, 50);
+            }
+
+            prevBtn.addEventListener('click', function() {
+                showImage(currentIndex - 1);
+            });
+
+            nextBtn.addEventListener('click', function() {
+                showImage(currentIndex + 1);
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!modal.classList.contains('active')) return;
+                
+                if (e.key === 'Escape') {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                } else if (e.key === 'ArrowLeft') {
+                    showImage(currentIndex - 1);
+                } else if (e.key === 'ArrowRight') {
+                    showImage(currentIndex + 1);
+                }
+            });
+
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    AOS.refresh();
+                }, 250);
+            });
+
+            // Touch swipe for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            modal.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            modal.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const difference = touchStartX - touchEndX;
+                
+                if (Math.abs(difference) > swipeThreshold) {
+                    if (difference > 0) {
+                        // Swipe left - next
+                        showImage(currentIndex + 1);
+                    } else {
+                        // Swipe right - previous
+                        showImage(currentIndex - 1);
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>
