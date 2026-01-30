@@ -1,7 +1,5 @@
 
 
-
- 
  
  // Mobile Menu Toggle 
         const menuToggle = document.getElementById('menuToggle');

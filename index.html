@@ -944,406 +944,7 @@
 
     
 
-    /* ===== FEATURED SERVICES SECTION ===== */
-    .featured-services {
-        background-color: var(--white);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .featured-services::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 300px;
-        height: 300px;
-        background: linear-gradient(135deg, var(--accent) 0%, transparent 70%);
-        border-radius: 50%;
-        opacity: 0.05;
-        z-index: 0;
-    }
-
-    /* Typing Container */
-    .typing-container {
-        text-align: center;
-        margin-bottom: 30px;
-        align-items: center;
-        justify-content: center;
-        
-    }
-
-    .typing-feature {
-        display: inline-flex;
-        align-items: center;
-        gap: 15px;
-        padding: 15px 30px;
-        background: rgba(255, 102, 0, 0.1);
-        border-radius: 50px;
-        border: 2px solid rgba(255, 102, 0, 0.2);
-        animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% { 
-            box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.2); 
-        }
-        50% { 
-            box-shadow: 0 0 0 10px rgba(255, 102, 0, 0); 
-        }
-    }
-
-    #typing-icon {
-        color: var(--accent);
-        font-size: 1.5rem;
-        animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-5px); }
-    }
-
-    .typing-text {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--accent);
-        min-height: 30px;
-    }
-
-    /* Featured Header */
-    .featured-header {
-        text-align: center;
-        margin-bottom: 60px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .featured-subtitle {
-        display: inline-block;
-        color: var(--accent);
-        font-weight: 600;
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 15px;
-        position: relative;
-        padding-left: 25px;
-    }
-
-    .featured-subtitle::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 15px;
-        height: 3px;
-        background-color: var(--accent);
-    }
-
-    .featured-title {
-        font-size: 2.5rem;
-        color: var(--primary);
-        margin-bottom: 20px;
-        position: relative;
-        line-height: 1.3;
-    }
-
-    .featured-title::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background-color: var(--accent);
-    }
-
-    .featured-description {
-        max-width: 700px;
-        margin: 30px auto 0;
-        color: var(--gray);
-        font-size: 1.1rem;
-        line-height: 1.8;
-    }
-
-    /* Slider Container */
-    .slider-container {
-        position: relative;
-        padding: 0 50px;
-        margin-bottom: 50px;
-    }
-
-    .slider-track {
-        display: flex;
-        gap: 30px;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        padding: 20px 10px;
-        scrollbar-width: none; 
-        -ms-overflow-style: none; 
-    }
-
-    .slider-track::-webkit-scrollbar {
-        display: none; 
-    }
-
-    /* Service Card */
-    .service-card {
-        flex: 0 0 350px;
-        background: var(--white);
-        border-radius: 5px;
-        box-shadow: var(--shadow);
-        overflow: hidden;
-        transition: var(--transition);
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        display: flex;
-        flex-direction: column;
-    }
-
-    .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        border-color: var(--accent);
-    }
-
-    .card-icon {
-        height: 200px;
-        overflow: hidden;
-    }
-
-    .card-icon img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: var(--transition);
-    }
-
-    .service-card:hover .card-icon img {
-        transform: scale(1.1);
-    }
-
-    .card-content {
-        padding: 30px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .card-title {
-        font-size: 1.3rem;
-        color: var(--primary);
-        margin-bottom: 15px;
-        font-weight: 600;
-        line-height: 1.4;
-    }
-
-    .card-text {
-        color: var(--gray);
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 20px;
-        flex-grow: 1;
-    }
-
-    .card-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        color: var(--accent);
-        font-weight: 600;
-        font-size: 0.95rem;
-        text-decoration: none;
-        transition: var(--transition);
-        margin-top: auto;
-    }
-
-    .card-link:hover {
-        color: var(--primary);
-        gap: 12px;
-    }
-
-    .card-link i {
-        transition: var(--transition);
-    }
-
-    .card-link:hover i {
-        transform: translateX(5px);
-    }
-
-    /* Slider Navigation */
-    .slider-nav {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        transform: translateY(-50%);
-        display: flex;
-        justify-content: space-between;
-        pointer-events: none;
-        z-index: 2;
-    }
-
-    .slider-prev,
-    .slider-next {
-        width: 50px;
-        height: 50px;
-        background: var(--white);
-        border: none;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--primary);
-        font-size: 1.2rem;
-        cursor: pointer;
-        transition: var(--transition);
-        box-shadow: var(--shadow);
-        pointer-events: auto;
-    }
-
-    .slider-prev:hover,
-    .slider-next:hover {
-        background: var(--primary);
-        color: var(--white);
-        transform: scale(1.1);
-    }
-
-    .slider-prev {
-        transform: translateX(-25px);
-    }
-
-    .slider-next {
-        transform: translateX(25px);
-    }
-
-    .slider-prev:hover {
-        transform: translateX(-25px) scale(1.1);
-    }
-
-    .slider-next:hover {
-        transform: translateX(25px) scale(1.1);
-    }
-
-    /* View All Button */
-    .view-all-container {
-        text-align: center;
-        margin-top: 40px;
-    }
-
-    .view-all-container .btn {
-        padding: 15px 40px;
-        font-size: 1.1rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1024px) {
-        .featured-title {
-            font-size: 2.2rem;
-        }
-        
-        .service-card {
-            flex: 0 0 300px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .featured-title {
-            font-size: 1.9rem;
-        }
-        
-        .slider-container {
-            padding: 0 30px;
-        }
-        
-        .service-card {
-            flex: 0 0 280px;
-        }
-        
-        .slider-prev,
-        .slider-next {
-            width: 40px;
-            height: 40px;
-            font-size: 1rem;
-        }
-        
-        .slider-prev {
-            transform: translateX(-15px);
-        }
-        
-        .slider-next {
-            transform: translateX(15px);
-        }
-    }
-
-    @media (max-width: 480px) {
-        .slider-container {
-        position: relative;
-        padding: 0 30px;
-        margin-bottom: 50px;
-        }
-
-        .service-card {
-        flex: 0 0 350px;
-        background: var(--white);
-        border-radius: 5px;
-        box-shadow: var(--shadow);
-        
-    }
-        .featured-title {
-            font-size: 1.7rem;
-        }
-        
-        .featured-description {
-            font-size: 1rem;
-        }
-        
-        .slider-container {
-            padding: 0 15px;
-        }
-        
-        .service-card {
-            flex: 0 0 250px;
-        }
-        
-        .card-content {
-            padding: 20px;
-        }
-        
-        .card-title {
-            font-size: 1.2rem;
-        }
-        
-        .typing-feature {
-            padding: 12px 20px;
-        }
-        
-        .typing-text {
-            font-size: 1rem;
-        }
-    }
-
-    @media (max-width: 360px) {
-        .service-card {
-            flex: 0 0 220px;
-        }
-        
-        .featured-title {
-            font-size: 1.5rem;
-        }
-    }
-
-
-
-
-
-
-
-
-
-
+   
 
 
 
@@ -2752,7 +2353,7 @@
 
     /* CONTROLS */
 
-    .slider-controls {
+    .slider-controlss {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -2761,7 +2362,7 @@
       width: 100%;
     }
 
-    .slider-btn {
+    .slider-btnn {
       width: 45px;
       height: 45px;
       border-radius: 50%;
@@ -2774,7 +2375,7 @@
       flex-shrink: 0;
     }
 
-    .slider-btn:hover {
+    .slider-btnn:hover {
       background: var(--primary);
       color: var(--white);
       transform: scale(1.1);
@@ -3336,6 +2937,379 @@
 
 
 
+
+
+
+
+
+/* General container */
+.our-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Section padding */
+.our-section-padding {
+    padding: 4rem 0;
+}
+
+/* Typing feature */
+.our-typing-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+#our-typing-icon {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+.our-typing-text {
+    display: inline-block;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* Header styles */
+.our-featured-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.our-featured-subtitle {
+    color: var(--accent);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.our-featured-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+.our-featured-description {
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Slider container */
+.our-slider-container {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.our-slider-track {
+    display: flex;
+    gap: 2rem;
+    scroll-behavior: smooth;
+    padding: 1rem;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.our-slider-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.our-service-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    flex: 0 0 calc(33.333% - 1.333rem); /* 3 per row */
+    min-height: 350px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Image background with gradient overlay */
+.our-service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+/* Gradient overlay with 'to-top' direction */
+.our-service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 51, 102, 0.85) 0%, rgba(0, 102, 204, 0.5) 50%, transparent 100%);
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.our-service-card:hover::before {
+    transform: scale(1.05);
+}
+
+.our-service-card:hover::after {
+    opacity: 0.9;
+}
+
+/* Individual card background images */
+.our-service-card:nth-child(1)::before {
+    background-image: url('Images/electricFence.png');
+}
+.our-service-card:nth-child(2)::before {
+    background-image: url('Images/newcctv2.jpeg');
+}
+.our-service-card:nth-child(3)::before {
+    background-image: url('Images/SmartDoor.png');
+}
+.our-service-card:nth-child(4)::before {
+    background-image: url('Images/NEWfirealarm.jpeg');
+}
+.our-service-card:nth-child(5)::before {
+    background-image: url('Images/poss.jpg');
+}
+.our-service-card:nth-child(6)::before {
+    background-image: url('Images/catcables.jpeg');
+}
+.our-service-card:nth-child(7)::before {
+    background-image: url('Images/acc2.jpeg');
+}
+.our-service-card:nth-child(8)::before {
+    background-image: url('Images/WaterHeater.jpg');
+}
+.our-service-card:nth-child(9)::before {
+    background-image: url('Images/solar-panel.jpg');
+}
+
+/* Card content */
+.our-card-content {
+    position: relative;
+    z-index: 3;
+    padding: 2rem;
+    color: var(--white);
+}
+
+.our-card-icon {
+    margin-bottom: 1rem;
+}
+
+.our-card-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.our-card-title {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.our-card-text {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.our-card-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    backdrop-filter: blur(5px);
+}
+
+.our-card-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
+
+/* Slider navigation */
+.our-slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.our-slider-prev,
+.our-slider-next {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.our-slider-prev:hover,
+.our-slider-next:hover {
+    background: var(--secondary);
+    transform: scale(1.1);
+}
+
+/* View all button */
+.our-view-all-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.our-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.our-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.our-btn-primary {
+    background: var(--primary);
+}
+
+/* Slider indicators */
+.our-slider-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+}
+
+.our-slider-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.our-slider-indicator.active {
+    background: var(--primary);
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .our-service-card {
+        flex: 0 0 calc(50% - 1rem); /* 2 per row */
+    }
+    
+    .our-featured-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .our-featured-title {
+        font-size: 2rem;
+    }
+    
+    .our-service-card {
+        flex: 0 0 85%; /* 1 per row with some margin */
+        min-height: 320px;
+    }
+    
+    .our-slider-track {
+        gap: 1rem;
+    }
+    
+    .our-card-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .our-section-padding {
+        padding: 2.5rem 0;
+    }
+    
+    .our-featured-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .our-featured-title {
+        font-size: 1.8rem;
+    }
+    
+    .our-featured-description {
+        font-size: 1rem;
+    }
+    
+    .our-service-card {
+        flex: 0 0 90%;
+        min-height: 300px;
+    }
+    
+    .our-card-title {
+        font-size: 1.3rem;
+    }
+    
+    .our-card-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Auto-rotate animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% / 3));
+    }
+}
+
+@media (min-width: 1025px) {
+    .our-slider-track.auto-rotate {
+        animation: slide 20s linear infinite;
+    }
+    
+    .our-slider-track:hover.auto-rotate {
+        animation-play-state: paused;
+    }
+}
+
+
+
+
+
+
+
+
     </style>
 </head>
 <body>
@@ -3436,6 +3410,157 @@
         </ul>
     </div>
 </section>
+
+
+
+
+
+<!-- Our Featured Services Section -->
+<section class="our-featured-services our-section-padding" id="our-featured-services">
+    <div class="our-container">
+        <!-- Typing Animation Section -->
+        <div class="our-typing-container" data-aos="fade-up" data-aos-duration="800">
+            <div id="our-typing-feature" class="our-typing-feature" role="region" aria-live="polite" aria-atomic="true">
+                <i id="our-typing-icon" class="fa-solid fa-bolt" aria-hidden="true"></i>
+                <div id="our-typing-text" class="our-typing-text" aria-label="Feature description"></div>
+            </div>
+        </div>
+
+        <!-- Section Header -->
+        <div class="our-featured-header" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <h2 class="our-featured-subtitle">24/7 Services – Safe and Efficient</h2>
+            <h1 class="our-featured-title">We are a Full Service Electrical Contractor</h1>
+            <p class="our-featured-description">Comprehensive security, electrical, and IT solutions with round-the-clock support and certified expertise</p>
+        </div>
+
+        <!-- Services Slider -->
+        <div class="our-slider-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <div class="our-slider-track" id="sliderTrack">
+                <!-- Service Cards -->
+                <div class="our-service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+                    <div class="our-card-content">
+                        <div class="our-card-icon">
+                            <i class="fas fa-shield-alt" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h3 class="our-card-title">Automatic Gates & Electric Fences</h3>
+                        <p class="our-card-text">Secure your premises with automatic gates and reliable electric fences for enhanced property protection.</p>
+                        <a href="services.html" class="our-card-link">More info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="our-service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
+                    <div class="our-card-content">
+                        <div class="our-card-icon">
+                            <i class="fas fa-video" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h3 class="our-card-title">Surveillance & Detection</h3>
+                        <p class="our-card-text">CCTV cameras, motion sensors, and walk-through metal detectors for complete security coverage.</p>
+                        <a href="services.html" class="our-card-link">More info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="our-service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+                    <div class="our-card-content">
+                        <div class="our-card-icon">
+                            <i class="fas fa-door-open" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h3 class="our-card-title">Access Control & Communication</h3>
+                        <p class="our-card-text">Intercoms, smart alarms, and modern access control systems for secure premises management.</p>
+                        <a href="services.html" class="our-card-link">More info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="our-service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+                    <div class="our-card-content">
+                        <div class="our-card-icon">
+                            <i class="fas fa-fire" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h3 class="our-card-title">Fire Alarms & Motion Detectors</h3>
+                        <p class="our-card-text">Protect lives and property with fire alarms and reliable motion detection devices.</p>
+                        <a href="services.html" class="our-card-link">More info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="our-service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
+                    <div class="our-card-content">
+                        <div class="our-card-icon">
+                            <i class="fas fa-cash-register" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h3 class="our-card-title">POS & Tracking Solutions</h3>
+                        <p class="our-card-text">Point of Sale systems, GPS trackers, and fuel monitoring systems for business optimization.</p>
+                        <a href="services.html" class="our-card-link">More info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="our-service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+                    <div class="our-card-content">
+                        <div class="our-card-icon">
+                            <i class="fas fa-network-wired" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h3 class="our-card-title">WAN/LAN & Installations</h3>
+                        <p class="our-card-text">Office/shop wiring, elevators, and escalator installations with professional expertise.</p>
+                        <a href="services.html" class="our-card-link">More info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="our-service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+                    <div class="our-card-content">
+                        <div class="our-card-icon">
+                            <i class="fas fa-snowflake" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h3 class="our-card-title">Air Conditioning Systems</h3>
+                        <p class="our-card-text">Professional installation of energy-efficient air conditioning for optimal comfort.</p>
+                        <a href="services.html" class="our-card-link">More info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="our-service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
+                    <div class="our-card-content">
+                        <div class="our-card-icon">
+                            <i class="fas fa-thermometer-half" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h3 class="our-card-title">Refrigeration & Water Heaters</h3>
+                        <p class="our-card-text">Reliable refrigeration systems and modern water heating solutions for residential and commercial needs.</p>
+                        <a href="services.html" class="our-card-link">More info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="our-service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+                    <div class="our-card-content">
+                        <div class="our-card-icon">
+                            <i class="fas fa-solar-panel" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h3 class="our-card-title">Electrical Panel Design & Automation</h3>
+                        <p class="our-card-text">Custom design and automation of electrical panels tailored to your specific requirements.</p>
+                        <a href="services.html" class="our-card-link">More info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Navigation -->
+            <div class="our-slider-nav">
+                <button class="our-slider-prev" aria-label="Previous services">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="our-slider-next" aria-label="Next services">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="our-view-all-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
+            <a href="services.html" class="our-btn our-btn-primary">
+                View All Services <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
 
 
     <!-- Services Section -->
@@ -3639,155 +3764,7 @@
 
 
 
- <!-- Featured Services Section -->
-<section class="featured-services section-padding" id="featured-services">
-    <div class="container">
-        <!-- Typing Animation Section -->
-        <div class="typing-container" data-aos="fade-up" data-aos-duration="800">
-            <div id="typing-feature" class="typing-feature" role="region" aria-live="polite" aria-atomic="true">
-                <i id="typing-icon" class="fa-solid fa-bolt" aria-hidden="true"></i>
-                <div id="typing-text" class="typing-text" aria-label="Feature description"></div>
-            </div>
-        </div>
-
-        <!-- Section Header -->
-        <div class="featured-header" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-            <h2 class="featured-subtitle">24/7 Services – Safe and Efficient</h2>
-            <h1 class="featured-title">We are a Full Service Electrical Contractor</h1>
-            <p class="featured-description">Comprehensive security, electrical, and IT solutions with round-the-clock support and certified expertise</p>
-        </div>
-
-        <!-- Services Slider -->
-        <div class="slider-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            <div class="slider-track">
-                <!-- Service Card 1 -->
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
-                    <div class="card-icon">
-                        <img src="Images/electricFence.png" alt="Automatic Gates">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Automatic Gates & Electric Fences</h3>
-                        <p class="card-text">Secure your premises with automatic gates and reliable electric fences for enhanced property protection.</p>
-                        <a href="services.html" class="card-link">More info <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
-                    <div class="card-icon">
-                        <img src="Images/newcctv2.jpeg" alt="Surveillance">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Surveillance & Detection</h3>
-                        <p class="card-text">CCTV cameras, motion sensors, and walk-through metal detectors for complete security coverage.</p>
-                        <a href="services.html" class="card-link">More info <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
-                    <div class="card-icon">
-                        <img src="Images/SmartDoor.png" alt="Access Control">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Access Control & Communication</h3>
-                        <p class="card-text">Intercoms, smart alarms, and modern access control systems for secure premises management.</p>
-                        <a href="services.html" class="card-link">More info <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 4 -->
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
-                    <div class="card-icon">
-                        <img src="Images/NEWfirealarm.jpeg" alt="Fire Alarms">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Fire Alarms & Motion Detectors</h3>
-                        <p class="card-text">Protect lives and property with fire alarms and reliable motion detection devices.</p>
-                        <a href="services.html" class="card-link">More info <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 5 -->
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
-                    <div class="card-icon">
-                        <img src="Images/poss.jpg" alt="POS Systems">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">POS & Tracking Solutions</h3>
-                        <p class="card-text">Point of Sale systems, GPS trackers, and fuel monitoring systems for business optimization.</p>
-                        <a href="services.html" class="card-link">More info <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 6 -->
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
-                    <div class="card-icon">
-                        <img src="Images/catcables.jpeg" alt="Networking">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">WAN/LAN & Installations</h3>
-                        <p class="card-text">Office/shop wiring, elevators, and escalator installations with professional expertise.</p>
-                        <a href="services.html" class="card-link">More info <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 7 -->
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
-                    <div class="card-icon">
-                        <img src="Images/acc2.jpeg" alt="Air Conditioning">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Air Conditioning Systems</h3>
-                        <p class="card-text">Professional installation of energy-efficient air conditioning for optimal comfort.</p>
-                        <a href="services.html" class="card-link">More info <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 8 -->
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
-                    <div class="card-icon">
-                        <img src="Images/WaterHeater.jpg" alt="Refrigeration">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Refrigeration & Water Heaters</h3>
-                        <p class="card-text">Reliable refrigeration systems and modern water heating solutions for residential and commercial needs.</p>
-                        <a href="services.html" class="card-link">More info <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 9 -->
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
-                    <div class="card-icon">
-                        <img src="Images/solar-panel.jpg" alt="Electrical Panels">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Electrical Panel Design & Automation</h3>
-                        <p class="card-text">Custom design and automation of electrical panels tailored to your specific requirements.</p>
-                        <a href="services.html" class="card-link">More info <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slider Navigation -->
-            <div class="slider-nav">
-                <button class="slider-prev" aria-label="Previous services">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-next" aria-label="Next services">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- View All Button -->
-        <div class="view-all-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
-            <a href="services.html" class="btn btn-primary">
-                View All Services <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-    </div>
-</section>
+ 
 
 
 
@@ -3907,13 +3884,6 @@
         </div>
     </div>
 </section>
-
-
-
-
-
-
-
 
 
 
@@ -4165,116 +4135,107 @@
 
     
     
- 
- 
- 
- 
- 
- 
- 
-    <!---Testimonies-->
- <section class="testimonials section-padding" id="testimonials">
+
+<section class="testimonials section-padding" id="testimonials">
   <div class="container testimonials-grid">
-
-    <!-- LEFT -->
-    <div class="testimonials-info">
-      <span class="eyebrow" data-aos="fade-up" data-aos-delay="200">Testimonials</span>
-      <h2 data-aos="fade-up" data-aos-delay="300">What Our Clients Say About Fermi</h2>
-      <p data-aos="fade-up" data-aos-delay="400">
-        Businesses and homeowners trust Fermi for professional electrical,
-        security, and IT solutions across Uganda.
-      </p>
-
-      <div class="stats">
-        <div class="stat-card" data-aos="fade-up" data-aos-delay="500">
-          <i class="fas fa-star"></i>
-          <strong>4.7/5</strong>
-          <span>Customer Rating</span>
-        </div>
-        <div class="stat-card" data-aos="fade-up" data-aos-delay="600">
-          <i class="fas fa-users"></i>
-          <strong>500+</strong>
-          <span>Satisfied Clients</span>
-        </div>
-      </div>
-
-      <a href="#testimonials" class="btn-outline" data-aos="fade-up" data-aos-delay="700">
-        <i class="fas fa-comments"></i>
-        View All Testimonials
-      </a>
-    </div>
-
-    <!-- RIGHT -->
-    <div class="testimonials-slider" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
-      <div class="slider-container">
-        <div class="slider-track" id="sliderTrack">
-
-          <!-- CARD 1 -->
-          <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600">
-            <header>
-              <i class="fas fa-quote-left"></i>
-              <div class="stars">★★★★★</div>
-            </header>
-            <p>
-              Fermi networked our office perfectly. Professional,
-              fast, and reliable service.
+            <!-- LEFT -->
+            <div class="testimonials-info">
+            <span class="eyebrow" data-aos="fade-up" data-aos-delay="200">Testimonials</span>
+            <h2 data-aos="fade-up" data-aos-delay="300">What Our Clients Say About Fermi</h2>
+            <p data-aos="fade-up" data-aos-delay="400">
+                Businesses and homeowners trust Fermi for professional electrical,
+                security, and IT solutions across Uganda.
             </p>
-            <div id="foot">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="">
-              <div>
-                <strong>Rafael Otim</strong>
-                <span>Kampala, Uganda</span>
-              </div>
+
+            <div class="stats">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-star"></i>
+                <strong>4.7/5</strong>
+                <span>Customer Rating</span>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="600">
+                <i class="fas fa-users"></i>
+                <strong>500+</strong>
+                <span>Satisfied Clients</span>
+                </div>
             </div>
-          </article>
 
-          <!-- CARD 2 -->
-          <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
-            <header>
-              <i class="fas fa-quote-left"></i>
-              <div class="stars">★★★★★</div>
-            </header>
-            <p>
-              Excellent electrical work. The team was efficient and
-              very professional.
-            </p>
-            <div id="foot">
-              <img src="https://images.unsplash.com/photo-1494790108755-2616b786d4d9?w=100" alt="">
-              <div>
-                <strong>Sophia Martha</strong>
-                <span>Entebbe, Uganda</span>
-              </div>
+            <a href="#testimonials" class="btn-outline" data-aos="fade-up" data-aos-delay="700">
+                <i class="fas fa-comments"></i>
+                View All Testimonials
+            </a>
             </div>
-          </article>
 
-          <!-- CARD 3 -->
-          <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
-            <header>
-              <i class="fas fa-quote-left"></i>
-              <div class="stars">★★★★★</div>
-            </header>
-            <p>
-              CCTV installation was flawless. Our security has
-              improved significantly.
-            </p>
-            <div id="foot">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="">
-              <div>
-                <strong>John Rogers</strong>
-                <span>Jinja, Uganda</span>
-              </div>
+            <!-- RIGHT -->
+            <div class="testimonials-slider" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack">
+
+                <!-- CARD 1 -->
+                <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600">
+                    <header>
+                    <i class="fas fa-quote-left"></i>
+                    <div class="stars">★★★★★</div>
+                    </header>
+                    <p>
+                    Fermi networked our office perfectly. Professional,
+                    fast, and reliable service.
+                    </p>
+                    <div id="foot">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="">
+                    <div>
+                        <strong>Rafael Otim</strong>
+                        <span>Kampala, Uganda</span>
+                    </div>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+                    <header>
+                    <i class="fas fa-quote-left"></i>
+                    <div class="stars">★★★★★</div>
+                    </header>
+                    <p>
+                    Excellent electrical work. The team was efficient and
+                    very professional.
+                    </p>
+                    <div id="foot">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b786d4d9?w=100" alt="">
+                    <div>
+                        <strong>Sophia Martha</strong>
+                        <span>Entebbe, Uganda</span>
+                    </div>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+                    <header>
+                    <i class="fas fa-quote-left"></i>
+                    <div class="stars">★★★★★</div>
+                    </header>
+                    <p>
+                    CCTV installation was flawless. Our security has
+                    improved significantly.
+                    </p>
+                    <div id="foot">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="">
+                    <div>
+                        <strong>John Rogers</strong>
+                        <span>Jinja, Uganda</span>
+                    </div>
+                    </div>
+                </article>
+
+                </div>
             </div>
-          </article>
 
-        </div>
-      </div>
-
-      <div class="slider-controls" data-aos="fade-up" data-aos-delay="400">
-        <button class="slider-btn" id="prevBtn">&#10094;</button>
-        <button class="slider-btn" id="nextBtn">&#10095;</button>
-      </div>
-    </div>
-
+            <div class="slider-controlss" data-aos="fade-up" data-aos-delay="400">
+                <button class="slider-btnn" id="prevBtnn">&#10094;</button>
+                <button class="slider-btnn" id="nextBtnn">&#10095;</button>
+            </div>
+            </div>
   </div>
 </section>
    
@@ -4463,6 +4424,8 @@
     <script src="fermi.js"></script>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+
 <script>
  AOS.init({
             duration:800,
@@ -4623,138 +4586,6 @@
 
 
 
-
-//FEATURED SERVICES SECTION
- // Typing Animation
-    document.addEventListener('DOMContentLoaded', function() {
-        const typingElement = document.getElementById('typing-text');
-        const words = [
-            '24/7 Emergency Electrical Services',
-            'Professional Security Installations',
-            'Advanced IT & Networking Solutions',
-            'Certified Electrical Contractors',
-            'Smart Home Automation Experts',
-            'Industrial Electrical Specialists'
-        ];
-        
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 100;
-
-        function typeWriter() {
-            const currentWord = words[wordIndex];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-                typingSpeed = 50;
-            } else {
-                typingElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-                typingSpeed = 100;
-            }
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                typingSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typingSpeed = 500;
-            }
-
-            setTimeout(typeWriter, typingSpeed);
-        }
-
-        // Start typing animation after a short delay
-        setTimeout(typeWriter, 1000);
-
-        // Slider Functionality
-        const sliderTrack = document.querySelector('.slider-track');
-        const prevBtn = document.querySelector('.slider-prev');
-        const nextBtn = document.querySelector('.slider-next');
-        
-        if (sliderTrack && prevBtn && nextBtn) {
-            const cardWidth = document.querySelector('.service-card').offsetWidth + 30; // card width + gap
-            const maxScroll = sliderTrack.scrollWidth - sliderTrack.clientWidth;
-            
-            nextBtn.addEventListener('click', () => {
-                sliderTrack.scrollBy({
-                    left: cardWidth,
-                    behavior: 'smooth'
-                });
-            });
-            
-            prevBtn.addEventListener('click', () => {
-                sliderTrack.scrollBy({
-                    left: -cardWidth,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Auto-scroll every 5 seconds
-            let autoScrollInterval = setInterval(() => {
-                const currentScroll = sliderTrack.scrollLeft;
-                if (currentScroll >= maxScroll - 10) {
-                    sliderTrack.scrollTo({
-                        left: 0,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    sliderTrack.scrollBy({
-                        left: cardWidth,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 5000);
-            
-            // Pause auto-scroll on hover
-            sliderTrack.addEventListener('mouseenter', () => {
-                clearInterval(autoScrollInterval);
-            });
-            
-            sliderTrack.addEventListener('mouseleave', () => {
-                autoScrollInterval = setInterval(() => {
-                    const currentScroll = sliderTrack.scrollLeft;
-                    if (currentScroll >= maxScroll - 10) {
-                        sliderTrack.scrollTo({
-                            left: 0,
-                            behavior: 'smooth'
-                        });
-                    } else {
-                        sliderTrack.scrollBy({
-                            left: cardWidth,
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 5000);
-            });
-            
-            // Touch swipe support
-            let startX = 0;
-            let scrollLeft = 0;
-            
-            sliderTrack.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].pageX - sliderTrack.offsetLeft;
-                scrollLeft = sliderTrack.scrollLeft;
-            });
-            
-            sliderTrack.addEventListener('touchmove', (e) => {
-                const x = e.touches[0].pageX - sliderTrack.offsetLeft;
-                const walk = (x - startX) * 2;
-                sliderTrack.scrollLeft = scrollLeft - walk;
-            });
-        }
-    });
-
-
-
-
-
-
-
-
     //TAB SERVICES SECTION
 
 
@@ -4802,10 +4633,10 @@
 
 //testimonials
 
-    const track = document.getElementById("sliderTrack");
+const track = document.getElementById("sliderTrack");
   const cards = document.querySelectorAll(".testimonial-card");
-  const prev = document.getElementById("prevBtn");
-  const next = document.getElementById("nextBtn");
+  const prev = document.getElementById("prevBtnn");
+  const next = document.getElementById("nextBtnn");
     
   let slidesPerViewValue = 3;
 
@@ -5038,6 +4869,226 @@
                 }
             }
         });
+
+
+
+
+
+
+
+
+
+//OURSERVICE SIDERs
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Slider variables
+    const sliderTrack = document.querySelector('.our-slider-track');
+    const sliderPrevBtn = document.querySelector('.our-slider-prev');
+    const sliderNextBtn = document.querySelector('.our-slider-next');
+    const serviceCards = document.querySelectorAll('.our-service-card');
+    
+    if (!sliderTrack || !sliderPrevBtn || !sliderNextBtn || serviceCards.length === 0) {
+        console.warn('Slider elements not found');
+        return;
+    }
+    
+    // Calculate card width including gap
+    let cardWidth = 0;
+    let gap = 20; // Default gap
+    let isAutoRotating = true;
+    let autoRotateInterval;
+    
+    function updateCardDimensions() {
+        if (serviceCards.length > 0) {
+            // Get the actual rendered width of the first card
+            const card = serviceCards[0];
+            const cardStyle = window.getComputedStyle(card);
+            cardWidth = card.offsetWidth;
+            
+            // Get gap from CSS
+            const trackStyles = window.getComputedStyle(sliderTrack);
+            const cssGap = parseFloat(trackStyles.gap);
+            if (!isNaN(cssGap)) {
+                gap = cssGap;
+            }
+        }
+    }
+    
+    // Initialize dimensions
+    updateCardDimensions();
+    
+    // Scroll amount (one card + gap)
+    function getScrollAmount() {
+        return cardWidth + gap;
+    }
+    
+    // Next button click handler
+    sliderNextBtn.addEventListener('click', () => {
+        pauseAutoRotate();
+        const currentScroll = sliderTrack.scrollLeft;
+        const newScroll = currentScroll + getScrollAmount();
+        const maxScroll = sliderTrack.scrollWidth - sliderTrack.clientWidth;
+        
+        if (newScroll >= maxScroll) {
+            // If at end, go back to start
+            sliderTrack.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            sliderTrack.scrollTo({
+                left: newScroll,
+                behavior: 'smooth'
+            });
+        }
+        
+        setTimeout(startAutoRotate, 5000);
+    });
+    
+    // Previous button click handler
+    sliderPrevBtn.addEventListener('click', () => {
+        pauseAutoRotate();
+        const currentScroll = sliderTrack.scrollLeft;
+        const newScroll = currentScroll - getScrollAmount();
+        
+        if (newScroll <= 0) {
+            // If at start, go to end
+            sliderTrack.scrollTo({
+                left: sliderTrack.scrollWidth,
+                behavior: 'smooth'
+            });
+        } else {
+            sliderTrack.scrollTo({
+                left: newScroll,
+                behavior: 'smooth'
+            });
+        }
+        
+        setTimeout(startAutoRotate, 5000);
+    });
+    
+    // Auto-rotate functionality
+    function startAutoRotate() {
+        if (!isAutoRotating) return;
+        
+        pauseAutoRotate();
+        autoRotateInterval = setInterval(() => {
+            const currentScroll = sliderTrack.scrollLeft;
+            const maxScroll = sliderTrack.scrollWidth - sliderTrack.clientWidth;
+            
+            if (currentScroll >= maxScroll) {
+                // Reset to beginning when at end
+                sliderTrack.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                sliderTrack.scrollTo({
+                    left: currentScroll + getScrollAmount(),
+                    behavior: 'smooth'
+                });
+            }
+        }, 3000); // Auto-rotate every 3 seconds
+    }
+    
+    function pauseAutoRotate() {
+        if (autoRotateInterval) {
+            clearInterval(autoRotateInterval);
+        }
+    }
+    
+    function toggleAutoRotate() {
+        isAutoRotating = !isAutoRotating;
+        if (isAutoRotating) {
+            startAutoRotate();
+        } else {
+            pauseAutoRotate();
+        }
+    }
+    
+    // Start auto-rotate initially
+    startAutoRotate();
+    
+    // Pause auto-rotate on hover
+    sliderTrack.addEventListener('mouseenter', pauseAutoRotate);
+    sliderTrack.addEventListener('mouseleave', startAutoRotate);
+    
+    // Pause auto-rotate when user interacts with slider
+    sliderTrack.addEventListener('touchstart', pauseAutoRotate);
+    sliderTrack.addEventListener('touchend', () => setTimeout(startAutoRotate, 5000));
+    
+    // Update dimensions on resize
+    window.addEventListener('resize', () => {
+        updateCardDimensions();
+        pauseAutoRotate();
+        setTimeout(startAutoRotate, 1000);
+    });
+    
+    // Create indicator dots
+    function createIndicators() {
+        const container = document.querySelector('.our-slider-container');
+        const indicatorsContainer = document.createElement('div');
+        indicatorsContainer.className = 'our-slider-indicators';
+        
+        const totalCards = serviceCards.length;
+        const visibleCards = Math.floor(sliderTrack.clientWidth / (cardWidth + gap));
+        const totalIndicators = Math.ceil(totalCards / visibleCards);
+        
+        for (let i = 0; i < totalIndicators; i++) {
+            const indicator = document.createElement('button');
+            indicator.className = 'our-slider-indicator';
+            if (i === 0) indicator.classList.add('active');
+            indicator.setAttribute('aria-label', `Go to slide group ${i + 1}`);
+            indicator.addEventListener('click', () => {
+                const scrollPosition = i * visibleCards * getScrollAmount();
+                sliderTrack.scrollTo({
+                    left: scrollPosition,
+                    behavior: 'smooth'
+                });
+                setActiveIndicator(i);
+                pauseAutoRotate();
+                setTimeout(startAutoRotate, 5000);
+            });
+            indicatorsContainer.appendChild(indicator);
+        }
+        
+        container.appendChild(indicatorsContainer);
+    }
+    
+    function setActiveIndicator(index) {
+        const indicators = document.querySelectorAll('.our-slider-indicator');
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+    
+    // Initialize indicators
+    setTimeout(createIndicators, 1000);
+    
+    // Handle scroll events for indicators
+    sliderTrack.addEventListener('scroll', () => {
+        const scrollPosition = sliderTrack.scrollLeft;
+        const visibleCards = Math.floor(sliderTrack.clientWidth / (cardWidth + gap));
+        const currentIndex = Math.floor(scrollPosition / (visibleCards * getScrollAmount()));
+        setActiveIndicator(currentIndex);
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
