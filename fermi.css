@@ -75,7 +75,7 @@
             text-align: center;
         }
 
-        .btn {
+        .btnn {
             display: inline-block;
             padding: 15px 30px;
             border-radius: 8px;
@@ -87,23 +87,23 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .btn-primary {
+        .btn-primaryy {
             background-color: var(--accent);
             color: var(--white);
         }
 
-        .btn-primary:hover {
+        .btn-primaryy:hover {
             background-color: #E55A00;
             transform: translateY(-3px);
             box-shadow: var(--shadow);
         }
 
-        .btn-secondary {
+        .btn-secondaryy {
             background-color: var(--secondary);
             color: var(--white);
         }
 
-        .btn-secondary:hover {
+        .btn-secondaryy:hover {
             background-color: #0055AA;
             transform: translateY(-3px);
         }
