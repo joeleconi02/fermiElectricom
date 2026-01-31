@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FermiElectricom | Integrated Security & Electrical Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fermi.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <style> 
+
+ 
+ /* Header */
+        .quote-header {
+            background: linear-gradient(rgba(0, 51, 102, 0.95), rgba(0, 30, 60, 0.95)), 
+                        url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .quote-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.8rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .quote-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .header-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .badge i {
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+
+        /* Quote Process Steps */
+        .process-section {
+            padding: 4rem 2rem;
+            background: var(--white);
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .process-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            counter-reset: step-counter;
+        }
+
+        .step {
+            background: var(--light);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .step h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .step p {
+            color: var(--gray);
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Quote Form Section */
+        .quote-form-section {
+            padding: 6rem 2rem;
+        }
+
+        .quote-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quote-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        /* Service Selection */
+        .service-selection {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .selection-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .selection-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-categories {
+            margin-bottom: 2rem;
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 0.8rem 1.5rem;
+            background: var(--light);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .category-tab.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+        .service-checkbox {
+            display: none;
+        }
+
+        .service-label {
+            display: block;
+            padding: 1.2rem 1rem;
+            background: var(--light);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-label:hover {
+            border-color: var(--primary);
+        }
+
+        .service-checkbox:checked + .service-label {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--accent);
+        }
+
+        .service-label i {
+            display: block;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .service-checkbox:checked + .service-label i {
+            color: var(--white);
+        }
+
+        /* Estimation Calculator */
+        .estimation-widget {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .estimation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .estimation-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .estimate-display {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .estimate-amount {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .estimate-note {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .estimate-details {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .estimate-details li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .estimate-details li:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .disclaimer {
+            background: rgba(255, 102, 0, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 1rem;
+        }
+
+        /* Quote Form */
+        .quote-form-container {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .form-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: var(--light);
+            border-radius: 3px;
+            margin-top: 1.5rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent);
+            width: 33%;
+            transition: width 0.3s ease;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .required {
+            color: var(--accent);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Form Navigation */
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            border: 2px solid transparent;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--white);
+            border-color: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background: #ff8c42;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.2);
+        }
+
+        /* Success Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .success-modal {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            animation: modalSlide 0.3s ease;
+        }
+
+        @keyframes modalSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--success), #34D399);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+        }
+
+        .success-modal h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-modal p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Us */
+        .benefits-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .quote-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .quote-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .category-tabs {
+                justify-content: center;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .service-selection,
+            .quote-form-container {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quote-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .quote-header p {
+                font-size: 1.1rem;
+            }
+            
+            .badge {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .process-header h2,
+            .selection-header h2,
+            .form-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-label {
+                padding: 1rem;
+            }
+            
+            .estimate-amount {
+                font-size: 2rem;
+            }
+            
+            .success-modal {
+                padding: 2rem;
+            }
+        }
+
+        /* Animation Classes */
+        .service-checkbox:checked + .service-label {
+            animation: pulse 0.3s ease;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Loading State */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+
+
+    
+
+   
+
+
+
+   
+
+
+
+
+
+
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div><img src="Images/logo2.jpg" width="40" height="40" alt="Logo"></div>
+                <div class="logo-text">Fermi<span>Electricom</span></div>
+            </div>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="whyus.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            
+            <div class="nav-cta">
+                
+                <a href="quote.html" class="btn btn-primary">Free Assessment</a>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+ <!-- Header -->
+    <header class="quote-header" data-aos="fade-in">
+        <div class="header-content">
+            <h1 data-aos="fade-up" data-aos-delay="200">Get Your Free Quote</h1>
+            <p data-aos="fade-up" data-aos-delay="400">No hidden costs. No obligation. Get an accurate estimate for your electrical and security needs in minutes.</p>
+            
+            <div class="header-badges" data-aos="fade-up" data-aos-delay="600">
+                <div class="badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>No Commitment</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-clock"></i>
+                    <span>Response within 24 Hours</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Guaranteed Pricing</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quote Process -->
+    <section class="process-section">
+        <div class="process-container" data-aos="fade-up">
+            <div class="process-header">
+                <h2>Simple 4-Step Process</h2>
+                <p>Getting your free quote is quick and easy</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="step-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Select Services</h3>
+                    <p>Choose from our range of electrical and security services</p>
+                </div>
+                
+                <div class="step" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="step-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Get Estimate</h3>
+                    <p>Receive an instant preliminary cost estimate</p>
+                </div>
+                
+                <div class="step" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="step-icon">
+                        <i class="fas fa-user-edit"></i>
+                    </div>
+                    <h3>Provide Details</h3>
+                    <p>Share your project requirements and contact information</p>
+                </div>
+                
+                <div class="step" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="step-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Receive Quote</h3>
+                    <p>Get your detailed, no-obligation quote within 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Quote Section -->
+    <section class="quote-form-section">
+        <div class="quote-container">
+            <div class="quote-grid">
+                <!-- Service Selection -->
+                <div class="service-selection" data-aos="fade-right">
+                    <div class="selection-header">
+                        <h2>Select Services</h2>
+                        <p>Choose all services you need a quote for</p>
+                    </div>
+                    
+                    <div class="service-categories">
+                        <div class="category-tabs">
+                            <button class="category-tab active" data-category="all">All Services</button>
+                            <button class="category-tab" data-category="security">Security</button>
+                            <button class="category-tab" data-category="electrical">Electrical</button>
+                            <button class="category-tab" data-category="other">Other</button>
+                        </div>
+                        
+                        <div class="services-grid" id="servicesGrid">
+                            <!-- Security Services -->
+                            <div class="service-item" data-category="security">
+                                <input type="checkbox" id="service1" class="service-checkbox" value="cctv">
+                                <label for="service1" class="service-label">
+                                    <i class="fas fa-video"></i>
+                                    CCTV Installation
+                                </label>
+                            </div>
+                            
+                            <div class="service-item" data-category="security">
+                                <input type="checkbox" id="service2" class="service-checkbox" value="access">
+                                <label for="service2" class="service-label">
+                                    <i class="fas fa-door-closed"></i>
+                                    Access Control
+                                </label>
+                            </div>
+                            
+                            <div class="service-item" data-category="security">
+                                <input type="checkbox" id="service3" class="service-checkbox" value="alarm">
+                                <label for="service3" class="service-label">
+                                    <i class="fas fa-bell"></i>
+                                    Alarm Systems
+                                </label>
+                            </div>
+                            
+                            <!-- Electrical Services -->
+                            <div class="service-item" data-category="electrical">
+                                <input type="checkbox" id="service4" class="service-checkbox" value="wiring">
+                                <label for="service4" class="service-label">
+                                    <i class="fas fa-bolt"></i>
+                                    Electrical Wiring
+                                </label>
+                            </div>
+                            
+                            <div class="service-item" data-category="electrical">
+                                <input type="checkbox" id="service5" class="service-checkbox" value="lighting">
+                                <label for="service5" class="service-label">
+                                    <i class="fas fa-lightbulb"></i>
+                                    Lighting Installation
+                                </label>
+                            </div>
+                            
+                            <div class="service-item" data-category="electrical">
+                                <input type="checkbox" id="service6" class="service-checkbox" value="panel">
+                                <label for="service6" class="service-label">
+                                    <i class="fas fa-solar-panel"></i>
+                                    Panel Installation
+                                </label>
+                            </div>
+                            
+                            <!-- Other Services -->
+                            <div class="service-item" data-category="other">
+                                <input type="checkbox" id="service7" class="service-checkbox" value="ac">
+                                <label for="service7" class="service-label">
+                                    <i class="fas fa-snowflake"></i>
+                                    AC Installation
+                                </label>
+                            </div>
+                            
+                            <div class="service-item" data-category="other">
+                                <input type="checkbox" id="service8" class="service-checkbox" value="network">
+                                <label for="service8" class="service-label">
+                                    <i class="fas fa-network-wired"></i>
+                                    Networking
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Estimation Widget -->
+                    <div class="estimation-widget">
+                        <div class="estimation-header">
+                            <h3>Preliminary Estimate</h3>
+                            <button id="resetEstimate" class="btn-outline btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fas fa-redo"></i> Reset
+                            </button>
+                        </div>
+                        
+                        <div class="estimate-display">
+                            <div class="estimate-amount" id="estimateAmount">UGX 0</div>
+                            <p class="estimate-note">Estimated starting price</p>
+                        </div>
+                        
+                        <ul class="estimate-details" id="estimateDetails">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
+                        
+                        <div class="disclaimer">
+                            <i class="fas fa-info-circle"></i> This is a preliminary estimate. Final quote may vary based on site inspection and specific requirements.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote Form -->
+                <div class="quote-form-container" data-aos="fade-left">
+                    <div class="form-header">
+                        <h2>Get Your Quote</h2>
+                        <p>Fill in your details to receive a detailed quote</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+                    
+                    <form id="quoteForm">
+                        <!-- Step 1: Contact Details -->
+                        <div class="form-step active" id="step1">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">First Name <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Email Address <span class="required">*</span></label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Phone Number <span class="required">*</span></label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Location <span class="required">*</span></label>
+                                <input type="text" class="form-control" id="location" placeholder="e.g., Kampala, Wakiso" required>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Project Details -->
+                        <div class="form-step" id="step2">
+                            <div class="form-group">
+                                <label class="form-label">Property Type <span class="required">*</span></label>
+                                <select class="form-control" id="propertyType" required>
+                                    <option value="">Select property type</option>
+                                    <option value="residential">Residential House</option>
+                                    <option value="apartment">Apartment</option>
+                                    <option value="commercial">Commercial Building</option>
+                                    <option value="industrial">Industrial Facility</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Project Size</label>
+                                <select class="form-control" id="projectSize">
+                                    <option value="">Select size</option>
+                                    <option value="small">Small (1-3 rooms)</option>
+                                    <option value="medium">Medium (4-7 rooms)</option>
+                                    <option value="large">Large (8+ rooms)</option>
+                                    <option value="commercial">Commercial Space</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Timeline</label>
+                                <select class="form-control" id="timeline">
+                                    <option value="">Select timeline</option>
+                                    <option value="urgent">Urgent (Within 1 week)</option>
+                                    <option value="soon">Soon (1-2 weeks)</option>
+                                    <option value="flexible">Flexible (1 month+)</option>
+                                    <option value="planning">Just Planning</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Additional Details</label>
+                                <textarea class="form-control" id="projectDetails" placeholder="Tell us more about your project..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Review & Submit -->
+                        <div class="form-step" id="step3">
+                            <div class="form-group">
+                                <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Review Your Quote Request</h3>
+                                
+                                <div class="review-summary">
+                                    <div class="review-item" style="background: var(--light); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Selected Services</h4>
+                                        <div id="reviewServices">No services selected</div>
+                                    </div>
+                                    
+                                    <div class="review-item" style="background: var(--light); padding: 1.5rem; border-radius: 8px;">
+                                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Estimate Range</h4>
+                                        <div id="reviewEstimate" style="font-size: 1.5rem; color: var(--accent); font-weight: bold;">UGX 0</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group" style="margin-top: 2rem;">
+                                    <label class="form-label">How did you hear about us?</label>
+                                    <select class="form-control" id="referralSource">
+                                        <option value="">Select option</option>
+                                        <option value="google">Google Search</option>
+                                        <option value="referral">Friend/Family Referral</option>
+                                        <option value="social">Social Media</option>
+                                        <option value="website">Our Website</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-outline" id="prevBtn" style="display: none;">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            
+                            <div style="margin-left: auto;">
+                                <button type="button" class="btn btn-primary" id="nextBtn">
+                                    Next <i class="fas fa-arrow-right"></i>
+                                </button>
+                                
+                                <button type="submit" class="btn btn-accent" id="submitBtn" style="display: none;">
+                                    <i class="fas fa-paper-plane"></i> Submit Quote Request
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="benefits-section">
+        <div class="benefits-container" data-aos="fade-up">
+            <div class="process-header" style="margin-bottom: 4rem;">
+                <h2>Why Get a Quote from Us?</h2>
+                <p>What makes our quoting process different</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>No Pressure</h3>
+                    <p>Get your quote with zero obligation to proceed</p>
+                </div>
+                
+                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="benefit-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Detailed Breakdown</h3>
+                    <p>Clear pricing with no hidden costs</p>
+                </div>
+                
+                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Quick Response</h3>
+                    <p>Receive your detailed quote within 24 hours</p>
+                </div>
+                
+                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Price Guarantee</h3>
+                    <p>Locked-in pricing for 30 days</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="success-modal">
+            <div class="modal-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3>Quote Request Submitted!</h3>
+            <p>Thank you for your interest in Fermi Electrotech. We have received your quote request and will contact you within 24 hours with a detailed estimate.</p>
+            <p style="font-weight: 600; color: var(--primary);">Reference ID: <span id="referenceId">FEQ-2024-001</span></p>
+            <button class="btn btn-accent" style="margin-top: 2rem;" onclick="closeModal()">
+                <i class="fas fa-home"></i> Return to Home
+            </button>
+        </div>
+    </div>
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box" data-aos="fade-up" data-aos-delay="100">
+                <h3>About Us</h3>
+                <p>We provide top-notch Security, Electrical & IT solutions with years of experience delivering reliable and innovative services across Uganda.</p>
+            </div>
+            <div class="footer-box" data-aos="fade-up" data-aos-delay="200">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-box" data-aos="fade-up" data-aos-delay="300">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="services.html">WLAN/LAN Installation</a></li>
+                    <li><a href="services.html">Air Conditioning</a></li>
+                    <li><a href="services.html">Automatic Gates & Electric Fences</a></li>
+                    <li><a href="services.html">Fire Alarms & Motion Detectors</a></li>
+                    <li><a href="services.html">Access Control Systems</a></li>
+                    <li><a href="services.html">POS & Tracking Solutions</a></li>
+                </ul>
+            </div>
+            <div class="footer-box contact-infoo" data-aos="fade-up" data-aos-delay="400">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+256 760 271 098">256 760 271 098</a></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+256 754 130 885">256 754 130 885</a></p>
+                <p><i class="fa-solid fa-envelope"></i> fermielectrictechtech@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Kampala, Uganda</p>
+            </div>
+        </div>
+        <div class="footer-bottom" data-aos="fade-up" data-aos-delay="500">
+            &copy; 2025 Fermi Electrical & IT Solutions. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Back-to-Top Button -->
+    <button id="backToTop" title="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+
+
+    <script src="fermi.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+
+<script>
+ AOS.init({
+            duration:800,
+            disable:false,
+            once:true,
+            offset:50,
+            startEvent:'load',
+            disableMUtationObserver:false,
+        });
+
+       
+
+
+
+       // Service Pricing Data
+        const servicePrices = {
+            cctv: { base: 1500000, perItem: 250000, name: 'CCTV Installation' },
+            access: { base: 800000, perItem: 150000, name: 'Access Control' },
+            alarm: { base: 500000, perItem: 100000, name: 'Alarm Systems' },
+            wiring: { base: 2000000, perItem: 300000, name: 'Electrical Wiring' },
+            lighting: { base: 750000, perItem: 50000, name: 'Lighting Installation' },
+            panel: { base: 1200000, perItem: 400000, name: 'Panel Installation' },
+            ac: { base: 1800000, perItem: 600000, name: 'AC Installation' },
+            network: { base: 900000, perItem: 200000, name: 'Networking' }
+        };
+
+        // Service Selection
+        let selectedServices = [];
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        // Category Tabs
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Filter services
+                const category = tab.dataset.category;
+                const services = document.querySelectorAll('.service-item');
+                
+                services.forEach(service => {
+                    if (category === 'all' || service.dataset.category === category) {
+                        service.style.display = 'block';
+                    } else {
+                        service.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Service Checkbox Handling
+        document.querySelectorAll('.service-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', updateEstimate);
+        });
+
+        // Update Estimate
+        function updateEstimate() {
+            selectedServices = [];
+            let total = 0;
+            const details = [];
+            
+            document.querySelectorAll('.service-checkbox:checked').forEach(checkbox => {
+                const serviceId = checkbox.value;
+                const service = servicePrices[serviceId];
+                selectedServices.push(serviceId);
+                
+                total += service.base;
+                details.push({
+                    name: service.name,
+                    price: service.base
+                });
+            });
+            
+            // Update display
+            const estimateDisplay = document.getElementById('estimateAmount');
+            const detailsList = document.getElementById('estimateDetails');
+            
+            estimateDisplay.textContent = `UGX ${total.toLocaleString()}`;
+            
+            // Update details list
+            detailsList.innerHTML = '';
+            details.forEach(detail => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${detail.name}</span>
+                    <span>UGX ${detail.price.toLocaleString()}</span>
+                `;
+                detailsList.appendChild(li);
+            });
+            
+            // Add total
+            const totalLi = document.createElement('li');
+            totalLi.innerHTML = `
+                <span>Estimated Total</span>
+                <span>UGX ${total.toLocaleString()}</span>
+            `;
+            detailsList.appendChild(totalLi);
+            
+            // Update review section
+            updateReviewSummary();
+        }
+
+        // Reset Estimate
+        document.getElementById('resetEstimate').addEventListener('click', () => {
+            document.querySelectorAll('.service-checkbox').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            updateEstimate();
+        });
+
+        // Form Navigation
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const progressFill = document.getElementById('progressFill');
+        
+        function showStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(stepElement => {
+                stepElement.classList.remove('active');
+            });
+            
+            // Show current step
+            document.getElementById(`step${step}`).classList.add('active');
+            
+            // Update progress bar
+            const progressPercent = ((step - 1) / (totalSteps - 1)) * 100;
+            progressFill.style.width = `${progressPercent}%`;
+            
+            // Update button visibility
+            prevBtn.style.display = step === 1 ? 'none' : 'inline-flex';
+            nextBtn.style.display = step === totalSteps ? 'none' : 'inline-flex';
+            submitBtn.style.display = step === totalSteps ? 'inline-flex' : 'none';
+            
+            currentStep = step;
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            if (validateStep(currentStep)) {
+                showStep(currentStep + 1);
+            }
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            showStep(currentStep - 1);
+        });
+        
+        function validateStep(step) {
+            let isValid = true;
+            
+            if (step === 1) {
+                const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'location'];
+                requiredFields.forEach(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = 'var(--accent)';
+                    } else {
+                        field.style.borderColor = '#ddd';
+                    }
+                });
+                
+                // Email validation
+                const email = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email.value.trim())) {
+                    isValid = false;
+                    email.style.borderColor = 'var(--accent)';
+                }
+            }
+            
+            return isValid;
+        }
+
+        // Update Review Summary
+        function updateReviewSummary() {
+            const servicesList = document.getElementById('reviewServices');
+            const estimateReview = document.getElementById('reviewEstimate');
+            
+            if (selectedServices.length > 0) {
+                let servicesHtml = '';
+                let total = 0;
+                
+                selectedServices.forEach(serviceId => {
+                    const service = servicePrices[serviceId];
+                    servicesHtml += `<div style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--success);"></i> ${service.name}</div>`;
+                    total += service.base;
+                });
+                
+                servicesList.innerHTML = servicesHtml;
+                estimateReview.textContent = `UGX ${total.toLocaleString()}`;
+            } else {
+                servicesList.textContent = 'No services selected';
+                estimateReview.textContent = 'UGX 0';
+            }
+        }
+
+        // Form Submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateStep(currentStep)) {
+                // Generate reference ID
+                const referenceId = 'FEQ-' + Date.now().toString().slice(-8);
+                document.getElementById('referenceId').textContent = referenceId;
+                
+                // Show success modal
+                document.getElementById('successModal').classList.add('active');
+                
+                // In a real application, you would send data to a server here
+                const formData = {
+                    services: selectedServices,
+                    contact: {
+                        firstName: document.getElementById('firstName').value,
+                        lastName: document.getElementById('lastName').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        location: document.getElementById('location').value
+                    },
+                    project: {
+                        type: document.getElementById('propertyType').value,
+                        size: document.getElementById('projectSize').value,
+                        timeline: document.getElementById('timeline').value,
+                        details: document.getElementById('projectDetails').value
+                    },
+                    referral: document.getElementById('referralSource').value,
+                    referenceId: referenceId
+                };
+                
+                console.log('Quote submitted:', formData);
+            }
+        });
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('active');
+            // Reset form
+            document.getElementById('quoteForm').reset();
+            document.querySelectorAll('.service-checkbox').forEach(cb => cb.checked = false);
+            updateEstimate();
+            showStep(1);
+        }
+
+        // Initialize
+        updateEstimate();
+    </script>
+</body>
+</html>
