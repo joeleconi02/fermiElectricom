@@ -3322,18 +3322,15 @@
             </div>
             
             <nav class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#projects">Projects</a>
-                <a href="#why-us">Why Us</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="whyus.html">Why Us</a>
+                <a href="contact.html">Contact</a>
             </nav>
             
             <div class="nav-cta">
-                <a href="tel:+256760271098" class="emergency-btn">
-                    <i class="fas fa-phone-alt"></i>
-                    24/7 Emergency
-                </a>
+                
                 <a href="#contact" class="btn btn-primary">Free Assessment</a>
             </div>
             
@@ -3384,7 +3381,7 @@
 
 
     <!--ABOUT US-->
-<section class="about-section">
+<section class="about-section section-padding ">
     <div class="about-img" data-aos="fade-right" data-aos-duration="800">
         <img src="Images/ManAtWork.png" 
              alt="Professional Electrical Services" 
@@ -3435,7 +3432,7 @@
 
         <!-- Services Slider -->
         <div class="our-slider-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            <div class="our-slider-track" id="sliderTrack">
+            <div class="our-slider-track" id="sliderTracker">
                 <!-- Service Cards -->
                 <div class="our-service-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
                     <div class="our-card-content">
@@ -4134,7 +4131,7 @@
     </section
 
     
-    
+   <!--Testimonies--> 
 
 <section class="testimonials section-padding" id="testimonials">
   <div class="container testimonials-grid">
@@ -4632,81 +4629,6 @@
 
 
 //testimonials
-
-const track = document.getElementById("sliderTrack");
-  const cards = document.querySelectorAll(".testimonial-card");
-  const prev = document.getElementById("prevBtnn");
-  const next = document.getElementById("nextBtnn");
-    
-  let slidesPerViewValue = 3;
-
-  let index = 0;
-  slidesPerViewValue = window.innerWidth < 768 ? 1 : 2;
-
-  function updateSlidesPerView() {
-    slidesPerViewValue = window.innerWidth < 768 ? 1 : 2;
-  }
-
-  function updateSlider() {
-    if (cards.length === 0) return;
-    
-    const cardWidth = cards[0].offsetWidth + (window.innerWidth < 768 ? 16 : 24);
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-  }
-
-  function nextSlide() {
-    const maxIndex = Math.max(0, cards.length - slidesPerViewValue);
-    if (index < maxIndex) {
-      index += 1;
-    } else {
-      index = 0;
-    }
-    updateSlider();
-  }
-
-  function prevSlide() {
-    const maxIndex = Math.max(0, cards.length - slidesPerViewValue);
-    if (index > 0) {
-      index -= 1;
-    } else {
-      index = maxIndex;
-    }
-    updateSlider();
-  }
-
-  next.addEventListener("click", nextSlide);
-  prev.addEventListener("click", prevSlide);
-
-  // Handle resize
-  let resizeTimeout;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      updateSlidesPerView();
-      updateSlider();
-      AOS.refresh(); // Refresh AOS on resize
-    }, 250);
-  });
-
-  // Initialize slider on load
-  window.addEventListener('load', () => {
-    updateSlidesPerView();
-    updateSlider();
-  });
-
-  // Also update on DOM content loaded
-  document.addEventListener('DOMContentLoaded', updateSlider);
-
-
-
-
-
-
-
-
-
-
-
 
 
 

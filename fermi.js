@@ -170,3 +170,82 @@
                 }, 250);
             });
         });
+
+
+
+//Testimonals
+        
+const track = document.getElementById("sliderTrack");
+  const cards = document.querySelectorAll(".testimonial-card");
+  const prev = document.getElementById("prevBtnn");
+  const next = document.getElementById("nextBtnn");
+    
+  let slidesPerViewValue = 3;
+
+  let index = 0;
+  slidesPerViewValue = window.innerWidth < 768 ? 1 : 2;
+
+  function updateSlidesPerView() {
+    slidesPerViewValue = window.innerWidth < 768 ? 1 : 2;
+  }
+
+  function updateSlider() {
+    if (cards.length === 0) return;
+    
+    const cardWidth = cards[0].offsetWidth + (window.innerWidth < 768 ? 16 : 24);
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  function nextSlide() {
+    const maxIndex = Math.max(0, cards.length - slidesPerViewValue);
+    if (index < maxIndex) {
+      index += 1;
+    } else {
+      index = 0;
+    }
+    updateSlider();
+  }
+
+  function prevSlide() {
+    const maxIndex = Math.max(0, cards.length - slidesPerViewValue);
+    if (index > 0) {
+      index -= 1;
+    } else {
+      index = maxIndex;
+    }
+    updateSlider();
+  }
+
+  next.addEventListener("click", nextSlide);
+  prev.addEventListener("click", prevSlide);
+
+  // Handle resize
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      updateSlidesPerView();
+      updateSlider();
+      AOS.refresh(); // Refresh AOS on resize
+    }, 250);
+  });
+
+  // Initialize slider on load
+  window.addEventListener('load', () => {
+    updateSlidesPerView();
+    updateSlider();
+  });
+
+  // Also update on DOM content loaded
+  document.addEventListener('DOMContentLoaded', updateSlider);
+
+
+
+
+
+
+
+
+
+
+

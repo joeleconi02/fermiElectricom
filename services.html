@@ -1,0 +1,2878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FermiElectricom | Integrated Security & Electrical Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fermi.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <style> 
+
+    /* ===== SERVICES SECTION ===== */
+    .services-section {
+        background-color: var(--light);
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0;
+    }
+
+    .services-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(135deg, var(--secondary) 0%, transparent 70%);
+        border-radius: 50%;
+        opacity: 0.05;
+        z-index: 0;
+    }
+
+    /* Services Header */
+    .services-header {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .services-subtitle {
+        display: inline-block;
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .services-subtitle::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 3px;
+        background-color: var(--accent);
+    }
+
+    .services-title {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+        position: relative;
+        line-height: 1.3;
+    }
+
+    .services-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--accent);
+    }
+
+    .services-description {
+        max-width: 700px;
+        margin: 30px auto 0;
+        color: var(--gray);
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    /* Tabs Container */
+    .tabs-container {
+        margin-bottom: 50px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--white);
+        
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: 25px 20px;
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--dark);
+        transition: var(--transition);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 1.05rem;
+        border-bottom: 3px solid transparent;
+    }
+
+    .tab:hover {
+        color: var(--primary);
+        background-color: rgba(0, 102, 204, 0.05);
+    }
+
+    .tab.active {
+        color: var(--white);
+        background-color: var(--primary);
+        
+    }
+
+    .tab.active::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid var(--primary);
+    }
+
+    .tab i {
+        font-size: 1.2rem;
+    }
+
+    /* Tab Content */
+    .tab-content {
+        display: none;
+        padding: 50px 0;
+        position: relative;
+        z-index: 1;
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Domestic Layout */
+    .domestic-layout {
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+        background: var(--white);
+        padding: 50px;
+        
+        box-shadow: var(--shadow);
+    }
+
+    .content-left {
+        flex: 0 0 70%;
+        max-width: 70%;
+    }
+
+    .content-right {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+
+    /* Content Header */
+    .content-header h2 {
+        font-size: 2.2rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    .content-header h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--accent);
+    }
+
+    .content-header p {
+        color: var(--gray);
+        line-height: 1.8;
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+        text-align: left;
+    }
+
+    /* Features Grid */
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .feature-box {
+        background: var(--light);
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 4px solid var(--secondary);
+        transition: var(--transition);
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .feature-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-left-color: var(--accent);
+    }
+
+    .feature-icon {
+        width: 55px;
+        height: 55px;
+        background: var(--white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: var(--accent);
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0;
+        transition: var(--transition);
+    }
+
+    .feature-box:hover .feature-icon {
+        background-color: var(--accent);
+        color: var(--white);
+        transform: rotate(5deg);
+    }
+
+    .feature-text h4 {
+        font-size: 1.2rem;
+        color: var(--primary);
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    .feature-text p {
+        color: var(--gray);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    /* Image Wrapper */
+    .image-wrapper {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: var(--transition);
+    }
+
+    .image-wrapper:hover .service-image {
+        transform: scale(1.05);
+    }
+
+    .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 51, 102, 0.9), transparent);
+        color: var(--white);
+        padding: 25px;
+        transform: translateY(100%);
+        transition: var(--transition);
+    }
+
+    .image-wrapper:hover .image-overlay {
+        transform: translateY(0);
+    }
+
+    .image-overlay h4 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .image-overlay p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+
+    /* Industrial Layout */
+    .industrial-layout {
+        background: var(--white);
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        text-align: center;
+    }
+
+    .industrial-layout .content-header h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Commercial Layout */
+    .commercial-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        background: var(--white);
+        padding: 50px;
+       
+        box-shadow: var(--shadow);
+        align-items: center;
+    }
+
+    .commercial-content h2 {
+        font-size: 2.2rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    .commercial-content h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--accent);
+    }
+
+    .commercial-content p {
+        color: var(--gray);
+        line-height: 1.8;
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+        text-align: left;
+    }
+
+    /* Checklist */
+    .checklist-container {
+        margin-top: 25px;
+    }
+
+    .checklist {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 40px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .checklist li {
+        list-style: none;
+        font-size: 1rem;
+        line-height: 1.5;
+        position: relative;
+        padding-left: 30px;
+        color: var(--dark);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+
+    .checklist li i {
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 1.1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .services-title {
+            font-size: 2.2rem;
+        }
+        
+        .domestic-layout,
+        .commercial-layout {
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        .industrial-layout {
+            padding: 40px;
+        }
+        
+        .checklist {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .domestic-layout {
+            flex-direction: column;
+        }
+        
+        .content-left,
+        .content-right {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+        
+        .content-right {
+            order: -1;
+        }
+        
+        .commercial-layout {
+            grid-template-columns: 1fr;
+        }
+        
+        .commercial-image {
+            order: -1;
+        }
+        
+        .content-header h2::after {
+            left: 0;
+            transform: none;
+        }
+        
+        .industrial-layout .content-header h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .services-section {
+            padding: 80px 0;
+        }
+        
+        .services-title {
+            font-size: 1.9rem;
+        }
+        
+        .tabs {
+            flex-direction: column;
+        }
+        
+        .tab {
+            width: 100%;
+            justify-content: flex-start;
+            padding: 20px 30px;
+        }
+        
+        .domestic-layout,
+        .industrial-layout,
+        .commercial-layout {
+            padding: 30px 25px;
+        }
+        
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .content-header h2 {
+            font-size: 1.8rem;
+        }
+        
+        .commercial-content h2 {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .services-title {
+            font-size: 1.7rem;
+        }
+        
+        .services-description {
+            font-size: 1rem;
+        }
+        
+        .domestic-layout,
+        .industrial-layout,
+        .commercial-layout {
+            padding: 25px 20px;
+        }
+        
+        .content-header h2 {
+            font-size: 1.6rem;
+        }
+        
+        .feature-box {
+            padding: 20px;
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            margin: 0 auto;
+        }
+        
+        .feature-text p {
+            text-align: center;
+        }
+        
+        .tab {
+            padding: 18px 25px;
+        }
+    }
+
+
+    
+
+
+
+
+        .services-hero-section {
+          min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 2rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.05) 0%, rgba(0, 102, 204, 0.05) 100%);
+        }
+
+        .services-hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Content Styling */
+        .hero-content {
+            padding-right: 2rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent), #FF8C42);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.2);
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .highlighted-text {
+            color: var(--primary);
+            font-weight: 600;
+            background: rgba(0, 102, 204, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* Contact Info Styling */
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-top: 1rem;
+        }
+
+        .contact-info h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .phone-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .phone-number i {
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+
+        .availability {
+            color: var(--gray);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .availability::before {
+            content: '\f017';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent);
+        }
+
+        /* Image Styling */
+        .hero-image {
+            position: relative;
+            height: 100%;
+           
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: var(--transition);
+        }
+
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .main-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .hero-image:hover .main-img {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(2, 40, 30, 0.1) 0%, rgba(0, 102, 204, 0.7) 100%);
+            z-index: 1;
+        }
+
+        /* Stats Counter */
+        .stats-counter {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 102, 204, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+           
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Background Elements */
+        .bg-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(255, 102, 0, 0.05) 100%);
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: -150px;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            left: -100px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .services-hero-container {
+                gap: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .main-img {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-hero-section {
+                padding: 3rem 1.5rem;
+                min-height: auto;
+            }
+            
+            .services-hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .hero-image {
+                transform: none;
+                order: -1;
+            }
+            
+            .hero-image:hover {
+                transform: scale(1.02);
+            }
+            
+            .stats-counter {
+                justify-content: center;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-hero-section {
+                padding: 2rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-text {
+                font-size: 1rem;
+            }
+            
+            .phone-number {
+                font-size: 1.3rem;
+            }
+            
+            .contact-info {
+                padding: 1.5rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.5rem;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .stats-counter {
+                gap: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+
+
+
+
+
+    
+
+   
+
+        /* Contact Section Styles */
+        .contact-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        /* Image Container */
+        .contact-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: translateY(0);
+            transition: transform 0.5s ease;
+        }
+        
+        .contact-image:hover {
+            transform: translateY(-10px);
+        }
+        
+        .contact-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 51, 102, 0.2) 0%, rgba(0, 102, 204, 0.1) 100%);
+            z-index: 1;
+        }
+        
+        .contact-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .contact-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            padding: 2rem;
+        }
+        
+        .contact-subtitle {
+            color: #ff6600;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .contact-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #ff6600;
+        }
+        
+        .contact-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #003366;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .contact-description {
+            color: #4a5568;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            padding-right: 2rem;
+        }
+        
+        /* Contact Details */
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 2.5rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            
+        }
+        
+        .contact-icon  {
+            width: 50px;
+            height: 50px;
+            background-color:#003366;
+            padding: 30px;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-left: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover .contact-icon {
+            
+            transform: rotate(10deg) scale(1.1);
+        }
+        
+        .contact-label {
+            color: #4a5568;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-value {
+            color: #003366;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .contact-value:hover {
+            color: #ff6600;
+            transform: translateX(5px);
+        }
+        
+        /* Background Decorative Elements */
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(255, 102, 0, 0.05) 100%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.05) 0%, rgba(0, 102, 204, 0.05) 100%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .contact-container {
+                gap: 3rem;
+            }
+            
+            .contact-title {
+                font-size: 2.4rem;
+            }
+            
+            .contact-image img {
+                height: 450px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .contact-image {
+                order: -1;
+            }
+            
+            .contact-info {
+                padding: 0;
+                text-align: center;
+            }
+            
+            .contact-subtitle::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .contact-description {
+                padding-right: 0;
+            }
+            
+            .contact-item {
+                text-align: left;
+            }
+            
+            .contact-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: 3rem 1rem;
+            }
+            
+            .contact-title {
+                font-size: 1.8rem;
+            }
+            
+            .contact-description {
+                font-size: 1rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 1.5rem 1rem;
+            }
+            
+            .contact-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 1.3rem;
+            }
+            
+            .contact-value {
+                font-size: 1.2rem;
+            }
+        }
+
+
+
+
+
+        /* Section Padding */
+.section-padding {
+    padding: 6rem 2rem;
+}
+
+/* 1. CERTIFICATIONS & ACCREDITATIONS SECTION */
+.certifications-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.certifications-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certifications-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.certifications-subtitle {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.certifications-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.certifications-header p {
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.cert-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-top-color: var(--accent);
+}
+
+.cert-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+}
+
+.cert-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.cert-card p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 2. EMERGENCY BANNER */
+.emergency-banner {
+    background: linear-gradient(135deg, var(--primary) 0%, #0a1f3a 100%);
+    color: var(--white);
+}
+
+.emergency-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.emergency-icon {
+    flex-shrink: 0;
+}
+
+.emergency-icon i {
+    font-size: 3.5rem;
+    color: var(--accent);
+}
+
+.emergency-text {
+    flex: 1;
+}
+
+.emergency-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.emergency-text h3 .highlight {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+.emergency-text p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.emergency-contact {
+    flex-shrink: 0;
+}
+
+.emergency-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    padding: 1.2rem 2rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    margin-bottom: 1rem;
+}
+
+.emergency-btn:hover {
+    background: #ff8c42;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
+}
+
+.emergency-btn i {
+    font-size: 1.5rem;
+}
+
+.emergency-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.emergency-number {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.emergency-note {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.emergency-note strong {
+    color: var(--accent);
+}
+
+/* 3. TECHNOLOGY & EQUIPMENT SECTION */
+.technology-section {
+    background: var(--white);
+}
+
+.technology-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.technology-subtitle {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.technology-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.technology-header p {
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.technology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.tech-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.tech-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.tech-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.tech-card:hover .tech-image img {
+    transform: scale(1.1);
+}
+
+.tech-content {
+    padding: 1.5rem;
+}
+
+.tech-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.tech-content p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 4. SERVICE AREAS MAP SECTION */
+.coverage-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.coverage-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.coverage-subtitle {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.coverage-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.coverage-header p {
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.coverage-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.map-container {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.map-region {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    background: var(--light);
+    cursor: pointer;
+    transition: var(--transition);
+    border-left: 4px solid transparent;
+}
+
+.map-region.active {
+    background: var(--primary);
+    color: var(--white);
+    border-left-color: var(--accent);
+}
+
+.map-region:hover:not(.active) {
+    background: rgba(0, 51, 102, 0.1);
+    transform: translateX(10px);
+}
+
+.map-region h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.map-region p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.region-details {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.region-details h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.region-details ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.region-details li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: var(--gray);
+}
+
+.region-details li i {
+    color: var(--accent);
+}
+
+.coverage-note {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(0, 102, 204, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.coverage-note i {
+    color: var(--accent);
+}
+
+.service-cta {
+    background: var(--primary);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.service-cta p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.service-cta strong {
+    color: var(--accent);
+}
+
+.coverage-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.coverage-btn:hover {
+    background: #ff8c42;
+    transform: translateY(-3px);
+}
+
+/* 5. MAINTENANCE PLANS SECTION */
+.maintenance-section {
+    background: var(--white);
+}
+
+.maintenance-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.maintenance-subtitle {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.maintenance-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.maintenance-header p {
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.plan-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
+}
+
+.plan-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--light);
+}
+
+.plan-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.plan-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.plan-price span {
+    font-size: 1rem;
+    color: var(--gray);
+    font-weight: normal;
+}
+
+.plan-card.professional {
+    transform: scale(1.05);
+    border-color: var(--accent);
+}
+
+.plan-card.professional .plan-header h3 {
+    color: var(--accent);
+}
+
+.plan-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    color: var(--gray);
+}
+
+.plan-features li i.fa-check {
+    color: var(--success);
+}
+
+.plan-features li i.fa-times {
+    color: #ccc;
+}
+
+.plan-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: 2px solid var(--primary);
+}
+
+.plan-btn:hover {
+    background: transparent;
+    color: var(--primary);
+}
+
+.plan-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.plan-btn.primary:hover {
+    background: transparent;
+    color: var(--accent);
+}
+
+.maintenance-notes {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background: rgba(0, 102, 204, 0.1);
+    border-radius: 8px;
+    color: var(--primary);
+}
+
+.maintenance-notes i {
+    color: var(--accent);
+    margin-right: 0.5rem;
+}
+
+/* 6. SUSTAINABILITY SECTION */
+.sustainability-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.sustainability-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.sustainability-subtitle {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.sustainability-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.sustainability-text p {
+    color: var(--gray);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+}
+
+.green-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.green-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.green-feature i {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.green-feature h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.green-feature p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.sustainability-image {
+    position: relative;
+}
+
+.image-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.image-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 51, 102, 0.9), transparent);
+    padding: 2rem;
+}
+
+.stats-overlay {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+    color: var(--white);
+}
+
+.stat-number {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .section-padding {
+        padding: 5rem 1.5rem;
+    }
+    
+    .emergency-content {
+        gap: 2rem;
+    }
+    
+    .coverage-content,
+    .sustainability-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 4rem 1rem;
+    }
+    
+    .certifications-header h2,
+    .technology-header h2,
+    .coverage-header h2,
+    .maintenance-header h2,
+    .sustainability-text h2 {
+        font-size: 2.2rem;
+    }
+    
+    .emergency-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .emergency-text h3 {
+        font-size: 1.8rem;
+    }
+    
+    .plans-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    .plan-card.professional {
+        transform: none;
+    }
+    
+    .sustainability-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certifications-header h2,
+    .technology-header h2,
+    .coverage-header h2,
+    .maintenance-header h2,
+    .sustainability-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .certifications-header p,
+    .technology-header p,
+    .coverage-header p,
+    .maintenance-header p,
+    .sustainability-text p {
+        font-size: 1rem;
+    }
+    
+    .cert-card,
+    .emergency-btn,
+    .region-details,
+    .service-cta,
+    .plan-card {
+        padding: 1.5rem;
+    }
+    
+    .green-feature {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .stats-overlay {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .emergency-number {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div><img src="Images/logo2.jpg" width="40" height="40" alt="Logo"></div>
+                <div class="logo-text">Fermi<span>Electricom</span></div>
+            </div>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="whyus.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            
+            <div class="nav-cta">
+                
+                <a href="#contact" class="btn btn-primary">Free Assessment</a>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+
+
+    <!-- Services Hero Section -->
+    <section class="services-hero-section section-padding">
+        <!-- Background Elements -->
+        <div class="bg-elements">
+            <div class="bg-circle circle-1"></div>
+            <div class="bg-circle circle-2"></div>
+        </div>
+        
+        <div class="services-hero-container">
+            <!-- Content Column -->
+            <div class="hero-content">
+                <span class="section-tag animate-fade-in">Our Premium Services</span>
+                
+                <h1 class="section-title animate-fade-in delay-1">
+                    Responsive & Professional Electrical Solutions
+                </h1>
+                
+                <p class="section-text animate-fade-in delay-2">
+                    We go the extra mile on every project. The value we provide clients comes from our level of 
+                    <span class="highlighted-text">skill and performance</span>, as well as our 
+                    <span class="highlighted-text">knowledge and professionalism</span>. 
+                    Rest assured, we put the same level of energy into every project we take on.
+                </p>
+                
+
+                
+                <!-- CTA Buttons -->
+                <div class="cta-buttons animate-fade-in delay-3">
+                    <a href="#services" class="btn btn-primary">
+                        <i class="fas fa-bolt"></i> View Our Services
+                    </a>
+                    <a href="tel:+256760271098" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> Get Free Quote
+                    </a>
+                </div>
+                
+               
+            </div>
+            
+            <!-- Image Column -->
+            <div class="hero-image animate-fade-in delay-1">
+                <div class="image-overlay"></div>
+                <img src="Images/InstallationSmartDoor.png" 
+                     alt="Professional Electrical Services" 
+                     class="main-img"
+                     loading="lazy"
+                     fetchpriority="high"
+                     onerror="this.src='https://images.unsplash.com/photo-1626278664285-f796b9ee7806?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'">
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Services Section -->
+<section class="services-section section-padding" id="services">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="services-header" data-aos="fade-up" data-aos-duration="800">
+            <span class="services-subtitle">OUR SERVICES</span>
+            <h2 class="services-title">We are the Professional Security & Electrical Service Provider</h2>
+            <p class="services-description">Comprehensive solutions for residential, commercial, and industrial needs with certified expertise</p>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <div class="tabs">
+                <div class="tab active" data-tab="domestic">
+                    <i class="fas fa-home"></i>
+                    Domestic Services
+                </div>
+                <div class="tab" data-tab="industrial">
+                    <i class="fas fa-industry"></i>
+                    Industrial Service
+                </div>
+                <div class="tab" data-tab="commercial">
+                    <i class="fas fa-building"></i>
+                    Commercial Service
+                </div>
+            </div>
+        </div>
+
+        <!-- Domestic Content -->
+        <div class="tab-content active" id="domestic" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+            <div class="domestic-layout">
+                <!-- Left Content -->
+                <div class="content-left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">
+                    <div class="content-header">
+                        <h2>Domestic Services</h2>
+                        <p>We do domestic household security & electrical services, ensuring your families are in the perfect state and safe from hazards such as fire outbreaks, short-circuits, and high room temperatures.</p>
+                        <p>Our expert technicians handle installations, repairs, and regular checkups to keep your home safe.</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+                            <div class="feature-icon"><i class="fa-solid fa-fan"></i></div>
+                            <div class="feature-text">
+                                <h4>Ceiling Fan Installations</h4>
+                                <p>New fan installations and repairs of existing fans.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
+                            <div class="feature-icon"><i class="fa-regular fa-lightbulb"></i></div>
+                            <div class="feature-text">
+                                <h4>Outdoor Lighting</h4>
+                                <p>Garden and poolside lighting solutions.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+                            <div class="feature-icon"><i class="fa-solid fa-wifi"></i></div>
+                            <div class="feature-text">
+                                <h4>WLAN/LAN</h4>
+                                <p>Networking your homes to get you connected.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+                            <div class="feature-icon"><i class="fa-solid fa-house"></i></div>
+                            <div class="feature-text">
+                                <h4>Home Wiring</h4>
+                                <p>Full or partial home lighting & rewiring services.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
+                            <div class="feature-icon"><i class="fa-solid fa-fire-extinguisher"></i></div>
+                            <div class="feature-text">
+                                <h4>Fire Safety</h4>
+                                <p>Protective measures to avoid fire hazards.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+                            <div class="feature-icon"><i class="fa-regular fa-snowflake"></i></div>
+                            <div class="feature-text">
+                                <h4>AC Installation</h4>
+                                <p>Full AC installation for comfort at your home.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Image -->
+                <div class="content-right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="600">
+                    <div class="image-wrapper">
+                        <img src="Images/NEWfirealarm.jpeg" 
+                             alt="Domestic Electrical Service" 
+                             class="service-image">
+                        <div class="image-overlay">
+                            <h4>100% Satisfaction</h4>
+                            <p>All domestic services come with quality guarantee</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industrial Content -->
+        <div class="tab-content" id="industrial" data-aos="fade-up" data-aos-duration="800">
+            <div class="industrial-layout">
+                <!-- Header -->
+                <div class="content-header" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <h2>Industrial Service</h2>
+                    <p>We are the best provider of industrial and commercial electrical services. We've executed projects of all sizes, from simple to sophisticated.</p>
+                    <p>Our seasoned electricians deliver efficient and effective solutions without interfering with your business operations.</p>
+                </div>
+                <!-- Features Grid -->
+                <div class="features-grid" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+                        <div class="feature-icon"><i class="fa-solid fa-gears"></i></div>
+                        <div class="feature-text">
+                            <h4>Design & Build</h4>
+                            <p>Industrial electrical designs and wiring ideas.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
+                        <div class="feature-icon"><i class="fa-regular fa-clock"></i></div>
+                        <div class="feature-text">
+                            <h4>24/7 Service</h4>
+                            <p>We are available round the clock to help you.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+                        <div class="feature-icon"><i class="fa-solid fa-plug"></i></div>
+                        <div class="feature-text">
+                            <h4>New Installation</h4>
+                            <p>Installation of industrial electrical components.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
+                        <div class="feature-icon"><i class="fa-solid fa-wrench"></i></div>
+                        <div class="feature-text">
+                            <h4>Retrofits & Repair</h4>
+                            <p>Component replacements and repairs as needed.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
+                        <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <div class="feature-text">
+                            <h4>Rapid Dispatch</h4>
+                            <p>Quick deployment for urgent production issues.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+                        <div class="feature-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <div class="feature-text">
+                            <h4>Power Quality Checks</h4>
+                            <p>Inspection of supply lines for reliability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Commercial Content -->
+        <div class="tab-content" id="commercial" data-aos="fade-up" data-aos-duration="800">
+            <div class="commercial-layout">
+                <!-- Left Image -->
+                <div class="commercial-image" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
+                    <div class="image-wrapper">
+                        <img src="Images/cat2cables.jpeg" 
+                             alt="Commercial Service" 
+                             class="service-image">
+                        <div class="image-overlay">
+                            <h4>Business Solutions</h4>
+                            <p>Tailored for commercial efficiency</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Content -->
+                <div class="commercial-content" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
+                    <h2>Commercial Services</h2>
+                    <p>Compared to domestic electrical repair work, commercial electrical installations require far more specialized labor.</p>
+                    <p>These tasks have a direct impact on the production system since they can save electrical costs and increased equipment longevity. Our services focuses:</p>
+
+                    <div class="checklist-container">
+                        <ul class="checklist">
+                            <li><i class="fas fa-check-circle"></i> WAN/LAN setup</li>
+                            <li><i class="fas fa-check-circle"></i> Wiring for offices and shops</li>
+                            <li><i class="fas fa-check-circle"></i> Installations of elevators & escalators</li>
+                            <li><i class="fas fa-check-circle"></i> Air conditioning (AC)</li>
+                            <li><i class="fas fa-check-circle"></i> CCTV Camera installation</li>
+                            <li><i class="fas fa-check-circle"></i> Installations of water heaters</li>
+                            <li><i class="fas fa-check-circle"></i> Electrical System Maintenance</li>
+                            <li><i class="fas fa-check-circle"></i> Upgradations of panels</li>
+                            <li><i class="fas fa-check-circle"></i> Installations of CCTV surveillance</li>
+                            <li><i class="fas fa-check-circle"></i> Electrical Safety check</li>
+                            <li><i class="fas fa-check-circle"></i> Whole House Surge Protector</li>
+                            <li><i class="fas fa-check-circle"></i> Line power quality checks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+ <!--CONTACT SECTION-->
+ <section class="contact-section ">
+        <div class="contact-container">
+            <!-- Image / Worker with AOS animations -->
+            <div class="contact-image" 
+                 data-aos="fade-right" 
+                 data-aos-duration="800" 
+                 data-aos-delay="200"
+                 data-aos-easing="ease-out-cubic">
+                <img src="Images/tester.jpg" alt="Electrical Worker">
+            </div>
+    
+            <!-- Contact Info with AOS animations -->
+            <div class="contact-info">
+                <p class="contact-subtitle" 
+                   data-aos="fade-up" 
+                   data-aos-duration="600"
+                   data-aos-delay="300">
+                    We're Here to Help
+                </p>
+                
+                <h2 class="contact-title" 
+                    data-aos="fade-up" 
+                    data-aos-duration="700"
+                    data-aos-delay="400">
+                    Need Security Services? Get in Touch Today.
+                </h2>
+                
+                <p class="contact-description" 
+                   data-aos="fade-up" 
+                   data-aos-duration="800"
+                   data-aos-delay="500">
+                    Our team of licensed professionals is available around the clock to assist with any security needs.
+                    Whether it's an emergency repair or a routine inspection — we've got you covered.
+                </p>
+    
+                <div class="contact-details">
+                    <div class="contact-item" 
+                         data-aos="zoom-in" 
+                         data-aos-duration="600"
+                         data-aos-delay="600">
+                        <i class="fas fa-phone-volume contact-icon"></i>
+                        <div>
+                            <p class="contact-label">Call Us Anytime</p>
+                            <a href="tel:+256 754130885" class="contact-value">0754 130885</a>
+                        </div>
+                    </div>
+    
+                    <div class="contact-item" 
+                         data-aos="zoom-in" 
+                         data-aos-duration="600"
+                         data-aos-delay="700">
+                        <i class="fas fa-envelope-open-text contact-icon"></i>
+                        <div>
+                            <p class="contact-label">Email Our Team</p>
+                            <a href="mailto:fermielectritech@gmail.com" class="contact-value">fermielectritech@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--    CERTIFICATION-->
+    <!-- Certifications Section -->
+<section class="certifications-section section-padding" data-aos="fade-up">
+    <div class="container">
+        <div class="certifications-header">
+            <span class="certifications-subtitle">OUR CREDENTIALS</span>
+            <h2>Licensed & Certified Professionals</h2>
+            <p>We maintain the highest industry standards with certified technicians and authorized partnerships</p>
+        </div>
+        
+        <div class="certifications-grid">
+            <div class="cert-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="cert-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Licensed Electricians</h3>
+                <p>All our technicians are Uganda Electricity Regulatory Authority (UERA) certified</p>
+            </div>
+            
+            <div class="cert-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="cert-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Security Certified</h3>
+                <p>Certified installers for Hikvision, Dahua, and Bosch security systems</p>
+            </div>
+            
+            <div class="cert-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="cert-icon">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <h3>Background Verified</h3>
+                <p>All staff undergo thorough background checks and training</p>
+            </div>
+            
+            <div class="cert-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="cert-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h3>Insured Services</h3>
+                <p>Fully insured for public liability up to UGX 500 million</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--EMERGENCY RESPONSE-->
+<!-- Emergency Banner -->
+<section class="emergency-banner section-padding" data-aos="fade-up">
+    <div class="container">
+        <div class="emergency-content">
+            <div class="emergency-icon" data-aos="pulse" data-aos-duration="1000" data-aos-iteration="infinite">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            
+            <div class="emergency-text">
+                <h3><span class="highlight">24/7</span> Emergency Electrical Services</h3>
+                <p>Electrical emergencies don't wait for business hours. Our rapid response team is available round-the-clock for urgent repairs and critical situations.</p>
+            </div>
+            
+            <div class="emergency-contact">
+                <a href="tel:+256760271098" class="emergency-btn" data-aos="zoom-in">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <span class="emergency-label">Emergency Hotline</span>
+                        <span class="emergency-number">+256 760 271 098</span>
+                    </div>
+                </a>
+                <p class="emergency-note">Average response time: <strong>45 minutes</strong> in Kampala area</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Technology Showcase -->
+<section class="technology-section section-padding" data-aos="fade-up">
+    <div class="container">
+        <div class="technology-header">
+            <span class="technology-subtitle">MODERN SOLUTIONS</span>
+            <h2>State-of-the-Art Equipment & Technology</h2>
+            <p>We invest in the latest technology to deliver superior results and enhanced safety</p>
+        </div>
+        
+        <div class="technology-grid">
+            <div class="tech-card" data-aos="flip-left" data-aos-delay="200">
+                <div class="tech-image">
+                    <img src="Images/thermal-camera.jpg" alt="Thermal Imaging Camera">
+                </div>
+                <div class="tech-content">
+                    <h3>Thermal Imaging</h3>
+                    <p>Advanced thermal cameras for detecting electrical hotspots and preventing failures</p>
+                </div>
+            </div>
+            
+            <div class="tech-card" data-aos="flip-left" data-aos-delay="300">
+                <div class="tech-image">
+                    <img src="Images/tester.jpg" alt="Smart Diagnostic Tools">
+                </div>
+                <div class="tech-content">
+                    <h3>Smart Diagnostics</h3>
+                    <p>Digital multimeters and circuit analyzers for precise fault detection</p>
+                </div>
+            </div>
+            
+            <div class="tech-card" data-aos="flip-left" data-aos-delay="400">
+                <div class="tech-image">
+                    <img src="Images/cableTester.jpg" alt="Network Testing Equipment">
+                </div>
+                <div class="tech-content">
+                    <h3>Network Testing</h3>
+                    <p>Professional cable testers and certification tools for reliable installations</p>
+                </div>
+            </div>
+            
+            <div class="tech-card" data-aos="flip-left" data-aos-delay="500">
+                <div class="tech-image">
+                    <img src="Images/ppe.jpg" alt="Safety Equipment">
+                </div>
+                <div class="tech-content">
+                    <h3>Safety First</h3>
+                    <p>Complete personal protective equipment (PPE) for all technicians</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- Service Coverage -->
+<section class="coverage-section section-padding" data-aos="fade-up">
+    <div class="container">
+        <div class="coverage-header">
+            <span class="coverage-subtitle">OUR REACH</span>
+            <h2>Service Areas Across Uganda</h2>
+            <p>Providing professional electrical and security services throughout Central and Eastern Uganda</p>
+        </div>
+        
+        <div class="coverage-content">
+            <div class="coverage-map" data-aos="zoom-in">
+                <!-- Simple SVG or image map of Uganda -->
+                <div class="map-container">
+                    <div class="map-region central active" data-region="central">
+                        <h4>Central Region</h4>
+                        <p>Kampala, Wakiso, Mukono, Entebbe</p>
+                    </div>
+                    <div class="map-region eastern" data-region="eastern">
+                        <h4>Eastern Region</h4>
+                        <p>Jinja, Mbale, Tororo, Iganga</p>
+                    </div>
+                    <div class="map-region western" data-region="western">
+                        <h4>Western Region</h4>
+                        <p>Mbarara, Fort Portal, Masaka</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="coverage-list" data-aos="fade-left">
+                <div class="region-details active" id="central-details">
+                    <h3>Central Region Coverage</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Kampala City & Metropolitan Area</li>
+                        <li><i class="fas fa-check"></i> Wakiso District</li>
+                        <li><i class="fas fa-check"></i> Mukono District</li>
+                        <li><i class="fas fa-check"></i> Entebbe Municipality</li>
+                        <li><i class="fas fa-check"></i> Kajjansi & Surrounding Areas</li>
+                    </ul>
+                    <div class="coverage-note">
+                        <i class="fas fa-clock"></i>
+                        <span>Response time: Within 2 hours</span>
+                    </div>
+                </div>
+                
+                <div class="service-cta">
+                    <p>Not in our primary service area? <strong>Contact us anyway!</strong> We arrange special appointments for regions outside our immediate coverage.</p>
+                    <a href="tel:+256754130885" class="coverage-btn">
+                        <i class="fas fa-phone-alt"></i> Inquire About Your Area
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- Maintenance Plans -->
+<section class="maintenance-section section-padding" data-aos="fade-up">
+    <div class="container">
+        <div class="maintenance-header">
+            <span class="maintenance-subtitle">PREVENTIVE CARE</span>
+            <h2>Electrical Maintenance Plans</h2>
+            <p>Proactive maintenance prevents costly breakdowns and ensures system longevity</p>
+        </div>
+        
+        <div class="plans-grid">
+            <div class="plan-card basic" data-aos="flip-up" data-aos-delay="200">
+                <div class="plan-header">
+                    <h3>Basic Care</h3>
+                    <div class="plan-price">UGX 150,000<span>/year</span></div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Bi-annual electrical inspection</li>
+                    <li><i class="fas fa-check"></i> Safety check of all circuits</li>
+                    <li><i class="fas fa-check"></i> Testing of safety devices</li>
+                    <li><i class="fas fa-check"></i> Visual inspection report</li>
+                    <li><i class="fas fa-times"></i> <del>Priority emergency response</del></li>
+                </ul>
+                <a href="#contact" class="plan-btn">Choose Plan</a>
+            </div>
+            
+            <div class="plan-card professional" data-aos="flip-up" data-aos-delay="300">
+                <div class="plan-badge">Most Popular</div>
+                <div class="plan-header">
+                    <h3>Professional Care</h3>
+                    <div class="plan-price">UGX 300,000<span>/year</span></div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Quarterly electrical inspection</li>
+                    <li><i class="fas fa-check"></i> Thermal imaging scan</li>
+                    <li><i class="fas fa-check"></i> Load testing & analysis</li>
+                    <li><i class="fas fa-check"></i> Detailed diagnostic report</li>
+                    <li><i class="fas fa-check"></i> Priority emergency response</li>
+                </ul>
+                <a href="#contact" class="plan-btn primary">Choose Plan</a>
+            </div>
+            
+            <div class="plan-card enterprise" data-aos="flip-up" data-aos-delay="400">
+                <div class="plan-header">
+                    <h3>Enterprise Care</h3>
+                    <div class="plan-price">Custom<span>/year</span></div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Monthly professional inspection</li>
+                    <li><i class="fas fa-check"></i> 24/7 monitoring support</li>
+                    <li><i class="fas fa-check"></i> Predictive maintenance</li>
+                    <li><i class="fas fa-check"></i> Energy efficiency audit</li>
+                    <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                </ul>
+                <a href="#contact" class="plan-btn">Request Quote</a>
+            </div>
+        </div>
+        
+        <div class="maintenance-notes" data-aos="fade-up" data-aos-delay="500">
+            <p><i class="fas fa-info-circle"></i> All plans include a 10% discount on any repair work needed during inspection</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- Green Solutions -->
+<section class="sustainability-section section-padding" data-aos="fade-up">
+    <div class="container">
+        <div class="sustainability-content">
+            <div class="sustainability-text" data-aos="fade-right">
+                <span class="sustainability-subtitle">ECO-FRIENDLY</span>
+                <h2>Energy Efficient & Sustainable Solutions</h2>
+                <p>We're committed to helping clients reduce their carbon footprint while saving on energy costs</p>
+                
+                <div class="green-features">
+                    <div class="green-feature" data-aos="fade-right" data-aos-delay="200">
+                        <i class="fas fa-solar-panel"></i>
+                        <div>
+                            <h4>Solar Integration</h4>
+                            <p>Expert installation of solar systems with grid-tie capabilities</p>
+                        </div>
+                    </div>
+                    
+                    <div class="green-feature" data-aos="fade-right" data-aos-delay="300">
+                        <i class="fas fa-leaf"></i>
+                        <div>
+                            <h4>LED Conversions</h4>
+                            <p>Energy-efficient LED lighting upgrades with up to 80% savings</p>
+                        </div>
+                    </div>
+                    
+                    <div class="green-feature" data-aos="fade-right" data-aos-delay="400">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <h4>Smart Energy Management</h4>
+                            <p>Automated systems to optimize energy consumption</p>
+                        </div>
+                    </div>
+                    
+                    <div class="green-feature" data-aos="fade-right" data-aos-delay="500">
+                        <i class="fas fa-recycle"></i>
+                        <div>
+                            <h4>E-Waste Disposal</h4>
+                            <p>Proper recycling and disposal of old electrical equipment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sustainability-image" data-aos="fade-left" data-aos-delay="400">
+                <div class="image-container">
+                    <img src="Images/maintenance2.jpeg" alt="Solar Panel Installation">
+                    <div class="image-overlay">
+                        <div class="stats-overlay">
+                            <div class="stat">
+                                <span class="stat-number">40%</span>
+                                <span class="stat-label">Average Energy Savings</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Years Warranty</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box" data-aos="fade-up" data-aos-delay="100">
+                <h3>About Us</h3>
+                <p>We provide top-notch Security, Electrical & IT solutions with years of experience delivering reliable and innovative services across Uganda.</p>
+            </div>
+            <div class="footer-box" data-aos="fade-up" data-aos-delay="200">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-box" data-aos="fade-up" data-aos-delay="300">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="services.html">WLAN/LAN Installation</a></li>
+                    <li><a href="services.html">Air Conditioning</a></li>
+                    <li><a href="services.html">Automatic Gates & Electric Fences</a></li>
+                    <li><a href="services.html">Fire Alarms & Motion Detectors</a></li>
+                    <li><a href="services.html">Access Control Systems</a></li>
+                    <li><a href="services.html">POS & Tracking Solutions</a></li>
+                </ul>
+            </div>
+            <div class="footer-box contact-infoo" data-aos="fade-up" data-aos-delay="400">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+256 760 271 098">256 760 271 098</a></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+256 754 130 885">256 754 130 885</a></p>
+                <p><i class="fa-solid fa-envelope"></i> fermielectrictechtech@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Kampala, Uganda</p>
+            </div>
+        </div>
+        <div class="footer-bottom" data-aos="fade-up" data-aos-delay="500">
+            &copy; 2025 Fermi Electrical & IT Solutions. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Back-to-Top Button -->
+    <button id="backToTop" title="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+
+
+    <script src="fermi.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+
+<script>
+ AOS.init({
+            duration:800,
+            disable:false,
+            once:true,
+            offset:50,
+            startEvent:'load',
+            disableMUtationObserver:false,
+        });
+
+       
+
+
+
+        // Tab Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show selected tab content
+                document.getElementById(tabId).classList.add('active');
+                
+                // Trigger AOS refresh for new content
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
+            });
+        });
+        
+        // Initialize first tab as active if not already
+        if (!document.querySelector('.tab.active')) {
+            tabs[0].classList.add('active');
+            tabContents[0].classList.add('active');
+        }
+    });
+
+
+
+
+
+
+
+//testimonials
+
+
+
+    </script>
+</body>
+</html>
