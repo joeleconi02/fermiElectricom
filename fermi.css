@@ -150,7 +150,7 @@
 
         /* ===== HEADER FIX ===== */
         .navbar {
-            background-color: var(--white);
+            background: inherit;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             position: fixed;
             top: 0;
@@ -158,6 +158,7 @@
             width: 100%;
             z-index: 1000;
             transition: var(--transition);
+            
         }
 
         .nav-container {
@@ -236,7 +237,7 @@
         .emergency-btn {
             background-color: var(--accent);
             color: var(--white);
-            padding: 10px 20px;
+            padding: 10px 10px;
             border-radius: 6px;
             font-weight: 600;
             display: flex;
@@ -267,9 +268,11 @@
             color: var(--primary);
             z-index: 1001;
         }
+        
 
         /* ===== MOBILE NAV FIX ===== */
         @media (max-width: 768px) {
+           
             .menu-toggle {
                 display: block;
             }
@@ -312,6 +315,10 @@
             .nav-cta {
                 display: none;
             }
+
+
+
+           
         }
 
 

@@ -34,15 +34,22 @@
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
+            const navlink =document.querySelector('.nav-links');
             if (window.scrollY > 100) {
+
                 navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-                navbar.style.height = '70px';
-                document.querySelector('.nav-container').style.height = '70px';
-            } else {
+                navbar.style.height = '90px';
+                document.querySelector('.nav-container').style.height = '90px';
+
+
+            } 
+            else {
                 navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
                 navbar.style.height = '90px';
                 document.querySelector('.nav-container').style.height = '90px';
             }
+
+
         });
 
         // Smooth scrolling for anchor links

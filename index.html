@@ -619,14 +619,14 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 25px;
-        margin-top: 30px;
+        margin-top: 10px;
     }
 
     .feature-box {
         background: var(--light);
-        padding: 25px;
+        padding: 15px;
         border-radius: 12px;
-        border-left: 4px solid var(--secondary);
+        border-left: 4px solid var(--primary);
         transition: var(--transition);
         display: flex;
         gap: 20px;
@@ -636,29 +636,10 @@
     .feature-box:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        border-left-color: var(--accent);
+       
     }
 
-    .feature-icon {
-        width: 55px;
-        height: 55px;
-        background: var(--white);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-        color: var(--accent);
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        flex-shrink: 0;
-        transition: var(--transition);
-    }
-
-    .feature-box:hover .feature-icon {
-        background-color: var(--accent);
-        color: var(--white);
-        transform: rotate(5deg);
-    }
+    
 
     .feature-text h4 {
         font-size: 1.2rem;
@@ -677,7 +658,6 @@
     /* Image Wrapper */
     .image-wrapper {
         position: relative;
-        border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     }
@@ -723,7 +703,6 @@
     .industrial-layout {
         background: var(--white);
         padding: 50px;
-        border-radius: 20px;
         box-shadow: var(--shadow);
         text-align: center;
     }
@@ -2130,312 +2109,201 @@
 
 
 
-    /* ===========================
-       TESTIMONIALS SECTION
-    ============================ */
 
-    .testimonials {
-      background: var(--light);
-      padding: 5rem 0;
-      width: 100%;
-      overflow: hidden; /* Prevent section overflow */
-    }
 
-    .testimonials-grid {
-      display: grid;
-      gap: 3rem;
-      width: 100%;
-    }
+/* Client Testimonials */
+.why-testimonials {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #05284E 0%, #0a1f3a 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
 
-    @media (min-width: 1024px) {
-      .testimonials-grid {
-        grid-template-columns: 1fr 1.5fr;
-        align-items: start;
-      }
-    }
+.why-testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
 
-    /* LEFT PANEL */
+.why-testimonials-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
 
-    .testimonials-info {
+.why-testimonials-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: inherit;
+}
+
+/* Desktop Grid Layout */
+.why-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+/* Mobile Carousel Layout */
+@media (max-width: 768px) {
+    .why-testimonials-grid {
+        display: flex;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        gap: 0;
+        position: relative;
         width: 100%;
-        overflow: hidden;
+        scroll-snap-type: x mandatory;
+        padding: 1rem 0;
     }
-
-    .testimonials-info .eyebrow {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: .85rem;
-      font-weight: 600;
-    }
-
-    .testimonials-info h2 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      color: var(--primary);
-      margin: .6rem 0 1rem;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-
-    .testimonials-info p {
-      color: var(--gray);
-      max-width: 100%;
-      word-wrap: break-word;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      margin: 2rem 0;
-      width: 100%;
-    }
-
-    .stat-card {
-      background: var(--white);
-      border-radius: 10px;
-      padding: 1.6rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      width: 100%;
-    }
-
-    .stat-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .stat-card i {
-      color: var(--accent);
-      font-size: 1.6rem;
-      margin-bottom: .5rem;
-    }
-
-    .stat-card strong {
-      display: block;
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .stat-card span {
-      font-size: .85rem;
-      color: var(--gray);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 1rem;
-      padding: .9rem 1.8rem;
-      border: 2px solid var(--primary);
-      border-radius: 10px;
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      transition: var(--transition);
-      font-family: 'Montserrat', sans-serif;
-      background: transparent;
-      width: fit-content;
-      max-width: 100%;
-    }
-
-    .btn-outline:hover {
-      background: var(--primary);
-      color: var(--white);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-    }
-
     
-
-    .testimonials-slider {
-        width: 100%;
-        overflow: hidden;
+    .why-testimonial-card {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+        margin: 0 1rem;
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+        opacity: 0.7;
     }
-
-    .slider-container {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
+    
+    .why-testimonial-card.active {
+        transform: scale(1);
+        opacity: 1;
     }
-
-    .slider-track {
-      display: flex;
-      gap: 1.5rem;
-      transition: transform .5s ease;
-      width: max-content;
-      padding: 10px 5px; 
-    }
-
-    .testimonial-card {
-      background: var(--white);
-      
-      padding: 2rem;
-      min-width: 32%;
-      transition: var(--transition);
-      flex: 0 0 auto;
-      width: calc(80% - 20px); 
-      min-width: 0; 
-    }
-
-    @media (min-width: 768px) {
-      .testimonial-card {
-        width: calc(50% - 10px); 
-        flex: 0 0 calc(50% - 10px);
-      }
-    }
-
-    /* Mobile adjustments */
-    @media (max-width: 767px) {
-      .testimonial-card {
-        width: calc(100vw - 60px); 
-        margin: 0 10px;
-      }
-    }
-
-    .testimonial-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .testimonial-card header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .testimonial-card header i {
-      color: var(--accent);
-      font-size: 1.6rem;
-    }
-
-    .stars {
-      color: #ffc107;
-      font-size: 1rem;
-    }
-
-    .testimonial-card p {
-      font-style: italic;
-      margin: 1rem 0 1.5rem;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-
-    #foot {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    #foot img {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    #foot strong {
-      display: block;
-      font-weight: 600;
-      word-break: break-word;
-    }
-
-    #foot span {
-      font-size: .85rem;
-      color: var(--gray);
-      word-break: break-word;
-    }
-
-    /* CONTROLS */
-
-    .slider-controlss {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 2rem;
-      width: 100%;
-    }
-
-    .slider-btnn {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      border: 2px solid var(--primary);
-      background: var(--white);
-      cursor: pointer;
-      font-size: 1.2rem;
-      color: var(--primary);
-      transition: .3s;
-      flex-shrink: 0;
-    }
-
-    .slider-btnn:hover {
-      background: var(--primary);
-      color: var(--white);
-      transform: scale(1.1);
-    }
-
-    /* Responsive fixes */
-    @media (max-width: 1023px) {
-      .testimonials-grid {
-        gap: 2rem;
-      }
-      
-      .testimonials {
-        padding: 3rem 0;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .container {
-        padding: 0 15px;
-      }
-      
-      .testimonials {
-        padding: 2rem 0;
-      }
-      
-      .slider-track {
-        gap: 1rem;
-      }
-      
-      .testimonial-card {
-        padding: 1.5rem;
-      }
-      
-      .stats {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      #foot {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      #foot img {
-        margin: 0 auto;
-      }
-      
-      .btn-outline {
-        width: 100%;
+    
+    /* Carousel Navigation Dots */
+    .why-testimonial-dots {
+        display: flex;
         justify-content: center;
-      }
+        gap: 0.8rem;
+        margin-top: 2.5rem;
     }
+    
+    .why-testimonial-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .why-testimonial-dot.active {
+        background: var(--accent);
+        transform: scale(1.2);
+    }
+    
+    /* Carousel Navigation Arrows */
+    .why-carousel-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .why-carousel-prev,
+    .why-carousel-next {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--white);
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .why-carousel-prev:hover,
+    .why-carousel-next:hover {
+        background: var(--accent);
+        transform: scale(1.1);
+    }
+}
 
+@media (max-width: 480px) {
+    .why-testimonials-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .why-testimonial-card {
+        padding: 2rem;
+        margin: 0 0.5rem;
+    }
+}
 
+.why-testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.why-testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
 
+.why-testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
 
+.why-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
 
-        
+.why-author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--accent);
+    flex-shrink: 0;
+}
+
+.why-author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.why-author-info h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.why-author-role {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Auto-rotate animation indicator */
+.why-auto-rotate-indicator {
+    display: none;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .why-auto-rotate-indicator {
+        display: block;
+    }
+}
 
 
 
@@ -3321,7 +3189,7 @@
                 <div class="logo-text">Fermi<span>Electricom</span></div>
             </div>
             
-            <nav class="nav-links" id="navLinks">
+            <nav class="nav-links " id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="projects.html">Projects</a>
@@ -3339,6 +3207,7 @@
             </button>
         </div>
     </header>
+
 
     <!-- Hero Section -->
 <section class="hero" id="home">
@@ -3600,42 +3469,42 @@
                     </div>
                     <div class="features-grid">
                         <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
-                            <div class="feature-icon"><i class="fa-solid fa-fan"></i></div>
+                           
                             <div class="feature-text">
                                 <h4>Ceiling Fan Installations</h4>
                                 <p>New fan installations and repairs of existing fans.</p>
                             </div>
                         </div>
                         <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
-                            <div class="feature-icon"><i class="fa-regular fa-lightbulb"></i></div>
+                            
                             <div class="feature-text">
                                 <h4>Outdoor Lighting</h4>
                                 <p>Garden and poolside lighting solutions.</p>
                             </div>
                         </div>
                         <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
-                            <div class="feature-icon"><i class="fa-solid fa-wifi"></i></div>
+                            
                             <div class="feature-text">
                                 <h4>WLAN/LAN</h4>
                                 <p>Networking your homes to get you connected.</p>
                             </div>
                         </div>
                         <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
-                            <div class="feature-icon"><i class="fa-solid fa-house"></i></div>
+                           
                             <div class="feature-text">
                                 <h4>Home Wiring</h4>
                                 <p>Full or partial home lighting & rewiring services.</p>
                             </div>
                         </div>
                         <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
-                            <div class="feature-icon"><i class="fa-solid fa-fire-extinguisher"></i></div>
+                          
                             <div class="feature-text">
                                 <h4>Fire Safety</h4>
                                 <p>Protective measures to avoid fire hazards.</p>
                             </div>
                         </div>
                         <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
-                            <div class="feature-icon"><i class="fa-regular fa-snowflake"></i></div>
+                        
                             <div class="feature-text">
                                 <h4>AC Installation</h4>
                                 <p>Full AC installation for comfort at your home.</p>
@@ -3670,42 +3539,42 @@
                 <!-- Features Grid -->
                 <div class="features-grid" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                     <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
-                        <div class="feature-icon"><i class="fa-solid fa-gears"></i></div>
+                        
                         <div class="feature-text">
                             <h4>Design & Build</h4>
                             <p>Industrial electrical designs and wiring ideas.</p>
                         </div>
                     </div>
                     <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
-                        <div class="feature-icon"><i class="fa-regular fa-clock"></i></div>
+                       
                         <div class="feature-text">
                             <h4>24/7 Service</h4>
                             <p>We are available round the clock to help you.</p>
                         </div>
                     </div>
                     <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
-                        <div class="feature-icon"><i class="fa-solid fa-plug"></i></div>
+                      
                         <div class="feature-text">
                             <h4>New Installation</h4>
                             <p>Installation of industrial electrical components.</p>
                         </div>
                     </div>
                     <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
-                        <div class="feature-icon"><i class="fa-solid fa-wrench"></i></div>
+                      
                         <div class="feature-text">
                             <h4>Retrofits & Repair</h4>
                             <p>Component replacements and repairs as needed.</p>
                         </div>
                     </div>
                     <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="550">
-                        <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        
                         <div class="feature-text">
                             <h4>Rapid Dispatch</h4>
                             <p>Quick deployment for urgent production issues.</p>
                         </div>
                     </div>
                     <div class="feature-box" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
-                        <div class="feature-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        
                         <div class="feature-text">
                             <h4>Power Quality Checks</h4>
                             <p>Inspection of supply lines for reliability.</p>
@@ -3894,7 +3763,7 @@
                 <div class="faq-image-container" data-aos="fade-right" data-aos-duration="800">
                     <div class="image-stack">
                         <div class="main-image">
-                            <img src="Images/cables-red-light-background.jpg" 
+                            <img src="Images/switch.png" 
                                  alt="Professional Network Installation">
                             <div class="image-badge">
                                 <i class="fas fa-shield-alt"></i>
@@ -4115,7 +3984,7 @@
                     <div class="faq-cta" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                         <p>Still have questions? We're here to help!</p>
                         <div class="cta-buttons">
-                            <a href="#contact" class="btn btn-primary">
+                            <a href="contact.html" class="btn btn-primary">
                                 <i class="fas fa-envelope"></i>
                                 Contact Us
                             </a>
@@ -4130,230 +3999,89 @@
         </div>
     </section
 
-    
-   <!--Testimonies--> 
-
-<section class="testimonials section-padding" id="testimonials">
-  <div class="container testimonials-grid">
-            <!-- LEFT -->
-            <div class="testimonials-info">
-            <span class="eyebrow" data-aos="fade-up" data-aos-delay="200">Testimonials</span>
-            <h2 data-aos="fade-up" data-aos-delay="300">What Our Clients Say About Fermi</h2>
-            <p data-aos="fade-up" data-aos-delay="400">
-                Businesses and homeowners trust Fermi for professional electrical,
-                security, and IT solutions across Uganda.
-            </p>
-
-            <div class="stats">
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="500">
-                <i class="fas fa-star"></i>
-                <strong>4.7/5</strong>
-                <span>Customer Rating</span>
+  <!--TESTIMONIALS-->  
+ <section class="why-testimonials section-padding">
+    <div class="why-testimonials-container">
+        <div class="why-testimonials-header" data-aos="fade-up">
+            <h2>What Our Clients Say</h2>
+            <p>Trusted by businesses and homeowners across Uganda</p>
+        </div>
+        
+        <div class="why-testimonials-grid" id="testimonialCarousel">
+            <div class="why-testimonial-card active" data-index="0">
+                <div class="why-testimonial-text">
+                    "Fermi Electrotech installed our office security system and handled all electrical upgrades. Their professionalism and attention to detail were exceptional. Two years later, everything still works perfectly."
                 </div>
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="600">
-                <i class="fas fa-users"></i>
-                <strong>500+</strong>
-                <span>Satisfied Clients</span>
+                <div class="why-testimonial-author">
+                    <div class="why-author-avatar">
+                        <img src="" alt="Client">
+                    </div>
+                    <div class="why-author-info">
+                        <h4>Robert Mugisha</h4>
+                        <div class="why-author-role">Business Owner, Kampala</div>
+                    </div>
                 </div>
             </div>
-
-            <a href="#testimonials" class="btn-outline" data-aos="fade-up" data-aos-delay="700">
-                <i class="fas fa-comments"></i>
-                View All Testimonials
-            </a>
-            </div>
-
-            <!-- RIGHT -->
-            <div class="testimonials-slider" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
-            <div class="slider-container">
-                <div class="slider-track" id="sliderTrack">
-
-                <!-- CARD 1 -->
-                <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600">
-                    <header>
-                    <i class="fas fa-quote-left"></i>
-                    <div class="stars">★★★★★</div>
-                    </header>
-                    <p>
-                    Fermi networked our office perfectly. Professional,
-                    fast, and reliable service.
-                    </p>
-                    <div id="foot">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="">
-                    <div>
-                        <strong>Rafael Otim</strong>
-                        <span>Kampala, Uganda</span>
+            
+            <div class="why-testimonial-card" data-index="1">
+                <div class="why-testimonial-text">
+                    "After a bad experience with another contractor, Fermi Electrotech came in and fixed everything. Their 24/7 emergency service saved us when our main power line failed at midnight. Highly recommended!"
+                </div>
+                <div class="why-testimonial-author">
+                    <div class="why-author-avatar">
+                        <img src="" alt="Client">
                     </div>
+                    <div class="why-author-info">
+                        <h4>Grace Nakato</h4>
+                        <div class="why-author-role">Homeowner, Entebbe</div>
                     </div>
-                </article>
-
-                <!-- CARD 2 -->
-                <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
-                    <header>
-                    <i class="fas fa-quote-left"></i>
-                    <div class="stars">★★★★★</div>
-                    </header>
-                    <p>
-                    Excellent electrical work. The team was efficient and
-                    very professional.
-                    </p>
-                    <div id="foot">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b786d4d9?w=100" alt="">
-                    <div>
-                        <strong>Sophia Martha</strong>
-                        <span>Entebbe, Uganda</span>
-                    </div>
-                    </div>
-                </article>
-
-                <!-- CARD 3 -->
-                <article class="testimonial-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
-                    <header>
-                    <i class="fas fa-quote-left"></i>
-                    <div class="stars">★★★★★</div>
-                    </header>
-                    <p>
-                    CCTV installation was flawless. Our security has
-                    improved significantly.
-                    </p>
-                    <div id="foot">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="">
-                    <div>
-                        <strong>John Rogers</strong>
-                        <span>Jinja, Uganda</span>
-                    </div>
-                    </div>
-                </article>
-
                 </div>
             </div>
-
-            <div class="slider-controlss" data-aos="fade-up" data-aos-delay="400">
-                <button class="slider-btnn" id="prevBtnn">&#10094;</button>
-                <button class="slider-btnn" id="nextBtnn">&#10095;</button>
-            </div>
-            </div>
-  </div>
-</section>
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Projects Gallery Section -->
-    <section class="projects-section1" id="projects">
-        <div class="container">
-            <h3 data-aos="fade-up" data-aos-delay="100">@fermiSecuritySolutions</h3>
-            <h2 data-aos="fade-up" data-aos-delay="200">Our Projects Gallery</h2>
-
-            <!-- Tabs -->
-            <div class="project-tabss" data-aos="fade-up" data-aos-delay="300">
-                <a class="active" data-filter="all">All</a>
-                <a data-filter="residences">Residences</a>
-                <a data-filter="industrial">Industrial</a>
-                <a data-filter="offices">Offices</a>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="projects-grid">
-                <!-- Residences -->
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="400" data-category="residences">
-                    <img src="Images/ourdoorlights.jpeg" alt="Modern Residence">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+            
+            <div class="why-testimonial-card" data-index="2">
+                <div class="why-testimonial-text">
+                    "The team handled our factory's complete electrical overhaul with minimal downtime. Their certified technicians and modern equipment made the entire process smooth and efficient."
                 </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="450" data-category="residences">
-                    <img src="Images/electricFence.png" alt="Secure Fence">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="500" data-category="residences">
-                    <img src="Images/newcctv.jpeg" alt="CCTV Installation">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="550" data-category="residences">
-                    <img src="Images/Facialrecognitionaccesscontrol.png" alt="Security System">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="600" data-category="residences">
-                    <img src="Images/electricFence3.jpeg" alt="Electric Fence">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="650" data-category="residences">
-                    <img src="Images/NEWfirealarm.jpeg" alt="Fire Safety">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="700" data-category="residences">
-                    <img src="Images/Fingerprintaccesscontrol.png" alt="Security Monitoring">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="750" data-category="residences">
-                    <img src="Images/solar.jpg" alt="Solar Panel Installation">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-
-                <!-- Industrial -->
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="800" data-category="industrial">
-                    <img src="Images/WaterHeater.jpg" alt="Industrial Water Heater">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="850" data-category="industrial">
-                    <img src="Images/idustrialesc.png" alt="Industrial Escalator">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="900" data-category="industrial">
-                    <img src="Images/fire-alarm.jpg" alt="Fire Alarm System">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="950" data-category="industrial">
-                    <img src="Images/switch.png" alt="Network Infrastructure">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1000" data-category="industrial">
-                    <img src="Images/setup.png" alt="Network Setup">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1050" data-category="industrial">
-                    <img src="Images/cat2cables.jpeg" alt="Cable Management">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1100" data-category="industrial">
-                    <img src="Images/GPS-TRACKER.jpg" alt="GPS Tracking System">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1150" data-category="residences">
-                    <img src="Images/maintenance2.jpeg" alt="Solar Panel Maintenance">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-
-                <!-- Offices -->
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1200" data-category="offices">
-                    <img src="Images/netRag.png" alt="Office Network Setup">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1250" data-category="offices">
-                    <img src="Images/officelights.jpeg" alt="Office Lighting">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1300" data-category="offices">
-                    <img src="Images/InstallationSmartDoor.png" alt="Office Escalator">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
-                </div>
-                <div class="project-cards" data-aos="zoom-in" data-aos-delay="1350" data-category="offices">
-                    <img src="Images/acc3.jpeg" alt="Office Air Conditioning">
-                    <div class="overlayy"><i class="fas fa-eye"></i></div>
+                <div class="why-testimonial-author">
+                    <div class="why-author-avatar">
+                        <img src="" alt="Client">
+                    </div>
+                    <div class="why-author-info">
+                        <h4>Joseph Okello</h4>
+                        <div class="why-author-role">Factory Manager, Jinja</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Mobile Carousel Controls -->
+        <div class="why-carousel-nav">
+            <button class="why-carousel-prev" aria-label="Previous testimonial">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="why-testimonial-dots" id="testimonialDots">
+                <!-- Dots will be generated by JavaScript -->
+            </div>
+            <button class="why-carousel-next" aria-label="Next testimonial">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Modal -->
     <div class="modal">
@@ -4628,7 +4356,210 @@
 
 
 
-//testimonials
+
+
+// Testimonial Carousel for Mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonialCarousel = document.getElementById('testimonialCarousel');
+    const testimonialCards = document.querySelectorAll('.why-testimonial-card');
+    const prevBtn = document.querySelector('.why-carousel-prev');
+    const nextBtn = document.querySelector('.why-carousel-next');
+    const dotsContainer = document.getElementById('testimonialDots');
+    
+    let currentIndex = 0;
+    let autoRotateInterval;
+    let isMobile = window.innerWidth <= 768;
+    
+    // Initialize carousel on mobile
+    function initCarousel() {
+        isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+            // Create dots
+            createDots();
+            
+            // Start auto-rotation
+            startAutoRotate();
+            
+            // Show carousel controls
+            document.querySelector('.why-carousel-nav').style.display = 'flex';
+            document.querySelector('.why-auto-rotate-indicator').style.display = 'block';
+            
+            // Add touch/swipe support
+            addTouchSupport();
+        } else {
+            // Reset to grid layout on desktop
+            testimonialCards.forEach(card => {
+                card.classList.remove('active');
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+            });
+            
+            // Hide carousel controls
+            document.querySelector('.why-carousel-nav').style.display = 'none';
+            document.querySelector('.why-auto-rotate-indicator').style.display = 'none';
+            
+            // Stop auto-rotation
+            stopAutoRotate();
+        }
+    }
+    
+    // Create navigation dots
+    function createDots() {
+        if (!dotsContainer) return;
+        
+        dotsContainer.innerHTML = '';
+        testimonialCards.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.className = 'why-testimonial-dot';
+            if (index === currentIndex) dot.classList.add('active');
+            dot.setAttribute('data-index', index);
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+        resetAutoRotate();
+    }
+    
+    // Update carousel display
+    function updateCarousel() {
+        testimonialCards.forEach((card, index) => {
+            if (index === currentIndex) {
+                card.classList.add('active');
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+            } else {
+                card.classList.remove('active');
+                card.style.opacity = '0.7';
+                card.style.transform = 'scale(0.95)';
+            }
+        });
+        
+        // Update dots
+        const dots = document.querySelectorAll('.why-testimonial-dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Scroll to active card
+        if (testimonialCarousel && testimonialCards[currentIndex]) {
+            testimonialCarousel.scrollTo({
+                left: testimonialCards[currentIndex].offsetLeft - testimonialCarousel.offsetLeft,
+                behavior: 'smooth'
+            });
+        }
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % testimonialCards.length;
+        updateCarousel();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + testimonialCards.length) % testimonialCards.length;
+        updateCarousel();
+    }
+    
+    // Auto-rotation
+    function startAutoRotate() {
+        if (!isMobile) return;
+        
+        stopAutoRotate();
+        autoRotateInterval = setInterval(nextSlide, 5000); // Rotate every 5 seconds
+    }
+    
+    function stopAutoRotate() {
+        if (autoRotateInterval) {
+            clearInterval(autoRotateInterval);
+        }
+    }
+    
+    function resetAutoRotate() {
+        stopAutoRotate();
+        startAutoRotate();
+    }
+    
+    // Touch/swipe support
+    function addTouchSupport() {
+        if (!testimonialCarousel) return;
+        
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        testimonialCarousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoRotate(); // Pause auto-rotate during interaction
+        });
+        
+        testimonialCarousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            setTimeout(startAutoRotate, 5000); // Resume after 5 seconds
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const difference = touchStartX - touchEndX;
+            
+            if (Math.abs(difference) > swipeThreshold) {
+                if (difference > 0) {
+                    // Swipe left - next
+                    nextSlide();
+                } else {
+                    // Swipe right - previous
+                    prevSlide();
+                }
+            }
+        }
+    }
+    
+    // Event Listeners
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoRotate();
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoRotate();
+        });
+    }
+    
+    // Pause auto-rotate on hover
+    testimonialCarousel.addEventListener('mouseenter', stopAutoRotate);
+    testimonialCarousel.addEventListener('mouseleave', startAutoRotate);
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        initCarousel();
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!isMobile) return;
+        
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            resetAutoRotate();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            resetAutoRotate();
+        }
+    });
+    
+    // Initialize on load
+    initCarousel();
+});
 
 
 
