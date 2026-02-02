@@ -654,17 +654,55 @@
                         </div>
                         
                         <div class="form-group">
-                            <label class="form-label">Service Needed</label>
-                            <select class="form-control" id="service">
-                                <option value="">Select a service</option>
-                                <option value="domestic">Domestic Electrical</option>
-                                <option value="commercial">Commercial Security</option>
-                                <option value="industrial">Industrial Installation</option>
-                                <option value="emergency">Emergency Repair</option>
-                                <option value="maintenance">Maintenance Plan</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
+    <label class="form-label">Service Needed</label>
+    <select class="form-control" id="service">
+        <option value="">Select a service</option>
+        
+        <optgroup label="Domestic Electrical">
+            <option value="domestic-wiring">Home Wiring & Rewiring</option>
+            <option value="lighting-install">Lighting Installation</option>
+            <option value="outlet-install">Outlet & Switch Installation</option>
+            <option value="panel-upgrade">Electrical Panel Upgrade</option>
+            <option value="appliance-circuit">Appliance Circuit Installation</option>
+            <option value="ev-charger">EV Charger Installation</option>
+        </optgroup>
+        
+        <optgroup label="Commercial Security">
+            <option value="cctv-install">CCTV Installation</option>
+            <option value="access-control">Access Control Systems</option>
+            <option value="alarm-system">Alarm System Installation</option>
+            <option value="fire-alarm">Fire Alarm Systems</option>
+        </optgroup>
+        
+        <optgroup label="Industrial Installation">
+            <option value="machine-wiring">Industrial Machine Wiring</option>
+            <option value="three-phase">Three-Phase Power Installation</option>
+            <option value="motor-control">Motor Control Systems</option>
+            <option value="high-voltage">High Voltage Systems</option>
+        </optgroup>
+        
+        <optgroup label="Emergency Repair">
+            <option value="power-outage">Power Outage Restoration</option>
+            <option value="spark-fixing">Spark/Fire Hazard Fixing</option>
+            <option value="breaker-failure">Circuit Breaker Failure</option>
+            <option value="flood-damage">Electrical Flood Damage Repair</option>
+        </optgroup>
+        
+        <optgroup label="Maintenance Plan">
+            <option value="annual-inspection">Annual Electrical Inspection</option>
+            <option value="preventive-maintenance">Preventive Maintenance</option>
+            <option value="safety-check">Regular Safety Checks</option>
+            <option value="equipment-testing">Equipment Testing</option>
+        </optgroup>
+        
+        <optgroup label="Other">
+            <option value="consultation">Consultation & Advice</option>
+            <option value="energy-audit">Energy Efficiency Audit</option>
+            <option value="code-compliance">Code Compliance Review</option>
+            <option value="custom-request">Custom Service Request</option>
+        </optgroup>
+    </select>
+</div>
                         
                         <div class="form-group">
                             <label class="form-label">Message <span class="required">*</span></label>
