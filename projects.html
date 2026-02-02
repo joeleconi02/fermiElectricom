@@ -128,108 +128,7 @@
             transform: scale(1.05);
         }
 
-        /* Projects Gallery Section */
-        .projects-gallery {
-            padding: 6rem 2rem;
-            background: var(--white);
-        }
-
-        .projects-gallery h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .gallery-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-            color: var(--gray);
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        /* Gallery Grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto 4rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            cursor: pointer;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            height: 300px;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0, 51, 102, 0.9) 0%, rgba(0, 102, 204, 0.7) 50%, transparent 100%);
-            display: flex;
-            align-items: flex-end;
-            padding: 2rem;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-
-        .overlay-content {
-            color: var(--white);
-            width: 100%;
-        }
-
-        .overlay-content i {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            background: rgba(255, 255, 255, 0.2);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(5px);
-        }
-
-        .overlay-content p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
+      
         /* Lightbox */
         .lightbox {
             display: none;
@@ -521,7 +420,8 @@
             background: var(--primary);
             color: var(--white);
         }
-   
+
+    
 </style>
 </head>
 <body>
@@ -578,139 +478,7 @@
         </div>
     </section>
 
-    <!-- Projects Gallery Section -->
-    <section class="projects-gallery">
-        <div class="container">
-            <h2 data-aos="fade-up">Our Project Portfolio</h2>
-            <p class="gallery-intro" data-aos="fade-up" data-aos-delay="200">
-                Explore our diverse portfolio showcasing exceptional electrical and security installations across Uganda.
-                Each project demonstrates our commitment to quality, innovation, and client satisfaction.
-            </p>
-
-            <!-- Filter Buttons -->
-            <div class="gallery-filter" data-aos="fade-up" data-aos-delay="300">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="security">Security Systems</button>
-                <button class="filter-btn" data-filter="electrical">Electrical</button>
-                <button class="filter-btn" data-filter="automation">Automation</button>
-                <button class="filter-btn" data-filter="networking">Networking</button>
-            </div>
-
-            <!-- Gallery Grid -->
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="security" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="Images/CCTVV.jpg" alt="CCTV Camera Installation" />
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <i class="fas fa-video"></i>
-                            <p>CCTV Camera Installation</p>
-                            <span class="project-location">Kampala Office Complex</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="electrical" data-aos="zoom-in" data-aos-delay="250">
-                    <img src="Images/acc2.jpeg" alt="Air Conditioning" />
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <i class="fas fa-snowflake"></i>
-                            <p>Air Conditioning System</p>
-                            <span class="project-location">Commercial Building, Entebbe</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="security" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="Images/electricFence.png" alt="Electric Fences" />
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <i class="fas fa-shield-alt"></i>
-                            <p>Electric Fence Installation</p>
-                            <span class="project-location">Residential Estate, Wakiso</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="security" data-aos="zoom-in" data-aos-delay="350">
-                    <img src="Images/fire-sensor.jpg" alt="Fire Alarms" />
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <i class="fas fa-fire-extinguisher"></i>
-                            <p>Fire Alarm System</p>
-                            <span class="project-location">Industrial Facility, Jinja</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="automation" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="Images/Newsmart.jpeg" alt="Access Control" />
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <i class="fas fa-door-closed"></i>
-                            <p>Access Control System</p>
-                            <span class="project-location">Corporate Office, Kampala</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="automation" data-aos="zoom-in" data-aos-delay="250">
-                    <img src="Images/gps-system-smart-car.jpg" alt="POS & Tracking Solutions" />
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>GPS Tracking System</p>
-                            <span class="project-location">Fleet Management, Kampala</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="networking" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="Images/catcables.jpeg" alt="WLAN/LAN Installation" />
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <i class="fas fa-network-wired"></i>
-                            <p>Network Infrastructure</p>
-                            <span class="project-location">Tech Company, Kampala</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="automation" data-aos="zoom-in" data-aos-delay="350">
-                    <img src="Images/AutomaticGates.png" alt="Automatic Gates" />
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <i class="fas fa-gate"></i>
-                            <p>Automatic Gate System</p>
-                            <span class="project-location">Private Residence, Entebbe</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="security" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="Images/mot.jpg" alt="Motion Detectors" />
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <i class="fas fa-running"></i>
-                            <p>Motion Detection System</p>
-                            <span class="project-location">Warehouse Facility, Kampala</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Lightbox -->
-        <div class="lightbox">
-            <span class="close">&times;</span>
-            <div class="lightbox-content">
-                <img class="lightbox-img" src="Images/network.jpg" alt="" />
-            </div>
-            <div class="lightbox-nav">
-                <span class="prev">&#10094;</span>
-                <span class="next">&#10095;</span>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Projects Stats -->
     <section class="projects-stats" data-aos="fade-up">
@@ -806,7 +574,7 @@
             </div>
         </div>
         <div class="footer-bottom" data-aos="fade-up" data-aos-delay="500">
-            &copy; 2025 Fermi Electrical & IT Solutions. All Rights Reserved.
+            &copy; 2026 Fermi Electrical & IT Solutions. All Rights Reserved.
         </div>
     </footer>
 
